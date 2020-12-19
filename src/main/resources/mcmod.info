@@ -1,0 +1,16 @@
+[
+{
+  "modid": "wbtc",
+  "name": "We Built This City",
+  "description": "A basic building mod that adds building blocks.",
+  "version": "0.0.1",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["RavenholmZombie"],
+  "credits": "TrainDevil for the mod's name.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

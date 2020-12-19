@@ -26,6 +26,6 @@ public class Main
     public void init(FMLInitializationEvent event)
     {
         // some example code
-        logger.info("We Built This City on Rock n Roll!");
+        logger.info("[We Built This City] Version " + Main.VERSION + " loading...");
     }
 }

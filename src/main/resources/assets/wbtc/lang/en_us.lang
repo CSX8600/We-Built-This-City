@@ -8,6 +8,7 @@ tile.panel_birch_l.name=Ceiling Panel - Birch Laminate
 tile.panel_jungle_l.name=Ceiling Panel - Jungle Laminate
 tile.panel_acacia_l.name=Ceiling Panel - Acacia Laminate
 tile.panel_dark_oak_l.name=Ceiling Panel - Dark Oak Laminate
+tile.panel_checkerboard.name=Ceiling Panel - Checkerboard
 
 //Laminate Floor Blocks
 tile.wbtc_oak.name=Oak Wood Laminate Floor
@@ -16,3 +17,6 @@ tile.wbtc_birch.name=Birch Wood Laminate Floor
 tile.wbtc_jungle.name=Jungle Wood Laminate Floor
 tile.wbtc_acacia.name=Acacia Wood Laminate Floor
 tile.wbtc_dark_oak.name=Dark Oak Wood Laminate Floor
+
+//Floor Blocks
+tile.wbtc_checkerboard.name=Checkerboard Floor

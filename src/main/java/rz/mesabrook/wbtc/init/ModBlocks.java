@@ -21,6 +21,7 @@ public class ModBlocks
 	public static final Block PANEL_FLOOR_JUNGLE_L = new WBTCBlock("panel_jungle_l", SoundType.STONE);
 	public static final Block PANEL_ACACIA_L = new WBTCBlock("panel_acacia_l", SoundType.STONE);
 	public static final Block PANEL_DARK_OAK_L = new WBTCBlock("panel_dark_oak_l", SoundType.STONE);
+	public static final Block PANEL_CHECKERBOARD = new WBTCBlock("panel_checkerboard", SoundType.STONE);
 	
 	// Ceiling Blocks - Wool
 	
@@ -33,4 +34,7 @@ public class ModBlocks
 	public static final Block FLOOR_JUNGLE = new WBTCBlock("wbtc_jungle", SoundType.STONE);
 	public static final Block FLOOR_ACACIA = new WBTCBlock("wbtc_acacia", SoundType.STONE);
 	public static final Block FLOOR_DARK_OAK = new WBTCBlock("wbtc_dark_oak", SoundType.STONE);
+	
+	// Floor Blocks
+	public static final Block FLOOR_CHECKERBOARD = new WBTCBlock("wbtc_checkerboard", SoundType.STONE);
 }

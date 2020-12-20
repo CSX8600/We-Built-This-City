@@ -1,7 +1,7 @@
 //Creative Tab
 itemGroup.wbtc_tab=We Built This City
 
-//Ceiling Tile
+//Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel
 
 //Ceiling Tiles
@@ -18,6 +18,22 @@ tile.panel_floor_tile_3.name=Ceiling Panel - Floor Tile
 tile.panel_floor_tile_4.name=Ceiling Panel - Floor Tile
 tile.panel_floor_tile_5.name=Ceiling Panel - Floor Tile
 tile.panel_floor_tile_6.name=Ceiling Panel - Arcade Carpet
+tile.panel_wool_white.name=Ceiling Panel - White Carpet
+tile.panel_wool_orange.name=Ceiling Panel - Orange Carpet
+tile.panel_wool_magenta.name=Ceiling Panel - Magenta Carpet
+tile.panel_wool_lblue.name=Ceiling Panel - Light Blue Carpet
+tile.panel_wool_yellow.name=Ceiling Panel - Yellow Carpet
+tile.panel_wool_lime.name=Ceiling Panel - Lime Carpet
+tile.panel_wool_pink.name=Ceiling Panel - Pink Carpet
+tile.panel_wool_gray.name=Ceiling Panel - Gray Carpet
+tile.panel_wool_silver.name=Ceiling Panel - Light Gray Carpet
+tile.panel_wool_cyan.name=Ceiling Panel - Cyan Carpet
+tile.panel_wool_purple.name=Ceiling Panel - Purple Carpet
+tile.panel_wool_blue.name=Ceiling Panel - Blue Carpet
+tile.panel_wool_brown.name=Ceiling Panel - Brown Carpet
+tile.panel_wool_green.name=Ceiling Panel - Green Carpet
+tile.panel_wool_red.name=Ceiling Panel - Red Carpet
+tile.panel_wool_black.name=Ceiling Panel - Black Carpet
 
 //Laminate Floor Blocks
 tile.wbtc_oak.name=Oak Wood Laminate Floor

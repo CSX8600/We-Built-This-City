@@ -30,7 +30,22 @@ public class ModBlocks
 	public static final Block PANEL_TILE_6 = new WBTCBlock("panel_floor_tile_6", SoundType.CLOTH);
 	
 	// Ceiling Blocks - Wool
-	
+	public static final Block PANEL_WOOL_WHITE = new WBTCBlock("panel_wool_white", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_ORANGE = new WBTCBlock("panel_wool_orange", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_MAGENTA = new WBTCBlock("panel_wool_magenta", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_LBLUE = new WBTCBlock("panel_wool_lblue", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_YELLOW = new WBTCBlock("panel_wool_yellow", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_LIME = new WBTCBlock("panel_wool_lime", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_PINK = new WBTCBlock("panel_wool_pink", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_GRAY = new WBTCBlock("panel_wool_gray", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_SILVER = new WBTCBlock("panel_wool_silver", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_CYAN = new WBTCBlock("panel_wool_cyan", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_PURPLE = new WBTCBlock("panel_wool_purple", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_BLUE = new WBTCBlock("panel_wool_blue", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_BROWN = new WBTCBlock("panel_wool_brown", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_GREEN = new WBTCBlock("panel_wool_green", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_RED = new WBTCBlock("panel_wool_red", SoundType.CLOTH);
+	public static final Block PANEL_WOOL_BLACK = new WBTCBlock("panel_wool_black", SoundType.CLOTH);
 	
 	// Laminate Wood Floor Blocks
 	public static final Block FLOOR_OAK = new WBTCBlock("wbtc_oak", SoundType.STONE);

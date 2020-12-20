@@ -37,4 +37,9 @@ public class ModBlocks
 	
 	// Floor Blocks
 	public static final Block FLOOR_CHECKERBOARD = new WBTCBlock("wbtc_checkerboard", SoundType.STONE);
+	public static final Block FLOOR_TILE_1 = new WBTCBlock("wbtc_floor_1", SoundType.STONE);
+	public static final Block FLOOR_TILE_2 = new WBTCBlock("wbtc_floor_2", SoundType.STONE);
+	public static final Block FLOOR_TILE_3 = new WBTCBlock("wbtc_floor_3", SoundType.STONE);
+	public static final Block FLOOR_TILE_4 = new WBTCBlock("wbtc_floor_4", SoundType.STONE);
+	public static final Block FLOOR_TILE_5 = new WBTCBlock("wbtc_floor_5", SoundType.STONE);
 }

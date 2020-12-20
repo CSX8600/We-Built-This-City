@@ -1,3 +1,6 @@
+//Creative Tab
+itemGroup.wbtc_tab=We Built This City
+
 //Ceiling Tile
 tile.panel_ceiling.name=Ceiling Panel
 
@@ -9,6 +12,12 @@ tile.panel_jungle_l.name=Ceiling Panel - Jungle Laminate
 tile.panel_acacia_l.name=Ceiling Panel - Acacia Laminate
 tile.panel_dark_oak_l.name=Ceiling Panel - Dark Oak Laminate
 tile.panel_checkerboard.name=Ceiling Panel - Checkerboard
+tile.panel_floor_tile_1.name=Ceiling Panel - Floor Tile
+tile.panel_floor_tile_2.name=Ceiling Panel - Floor Tile
+tile.panel_floor_tile_3.name=Ceiling Panel - Floor Tile
+tile.panel_floor_tile_4.name=Ceiling Panel - Floor Tile
+tile.panel_floor_tile_5.name=Ceiling Panel - Floor Tile
+tile.panel_floor_tile_6.name=Ceiling Panel - Arcade Carpet
 
 //Laminate Floor Blocks
 tile.wbtc_oak.name=Oak Wood Laminate Floor
@@ -19,9 +28,10 @@ tile.wbtc_acacia.name=Acacia Wood Laminate Floor
 tile.wbtc_dark_oak.name=Dark Oak Wood Laminate Floor
 
 //Floor Blocks
-tile.wbtc_checkerboard.name=Checkerboard Floor
+tile.wbtc_checkerboard.name=Floor Tile - Checkerboard
 tile.wbtc_floor_1.name=Floor Tile
 tile.wbtc_floor_2.name=Floor Tile
 tile.wbtc_floor_3.name=Floor Tile
 tile.wbtc_floor_4.name=Floor Tile
 tile.wbtc_floor_5.name=Floor Tile
+tile.wbtc_floor_6.name=Floor Tile - Arcade Carpet

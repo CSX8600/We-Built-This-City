@@ -14,7 +14,7 @@ public class ModBlocks
 	// Ceiling Block
 	public static final Block CEILING = new WBTCBlock("panel_ceiling", SoundType.STONE);
 	
-	// Ceiling Blocks - Stone/Concrete/Laminate
+	// Ceiling Blocks - Stone/Concrete/Laminate/WBTC Floor Tiles
 	public static final Block PANEL_OAK_L = new WBTCBlock("panel_oak_l", SoundType.STONE);
 	public static final Block PANEL_SPRUCE_L = new WBTCBlock("panel_spruce_l", SoundType.STONE);
 	public static final Block PANEL_BIRCH_L = new WBTCBlock("panel_birch_l", SoundType.STONE);
@@ -22,10 +22,15 @@ public class ModBlocks
 	public static final Block PANEL_ACACIA_L = new WBTCBlock("panel_acacia_l", SoundType.STONE);
 	public static final Block PANEL_DARK_OAK_L = new WBTCBlock("panel_dark_oak_l", SoundType.STONE);
 	public static final Block PANEL_CHECKERBOARD = new WBTCBlock("panel_checkerboard", SoundType.STONE);
+	public static final Block PANEL_TILE_1 = new WBTCBlock("panel_floor_tile_1", SoundType.STONE);
+	public static final Block PANEL_TILE_2 = new WBTCBlock("panel_floor_tile_2", SoundType.STONE);
+	public static final Block PANEL_TILE_3 = new WBTCBlock("panel_floor_tile_3", SoundType.STONE);
+	public static final Block PANEL_TILE_4 = new WBTCBlock("panel_floor_tile_4", SoundType.STONE);
+	public static final Block PANEL_TILE_5 = new WBTCBlock("panel_floor_tile_5", SoundType.STONE);
+	public static final Block PANEL_TILE_6 = new WBTCBlock("panel_floor_tile_6", SoundType.CLOTH);
 	
 	// Ceiling Blocks - Wool
 	
-	// Ceiling Blocks - Wood
 	
 	// Laminate Wood Floor Blocks
 	public static final Block FLOOR_OAK = new WBTCBlock("wbtc_oak", SoundType.STONE);
@@ -42,4 +47,5 @@ public class ModBlocks
 	public static final Block FLOOR_TILE_3 = new WBTCBlock("wbtc_floor_3", SoundType.STONE);
 	public static final Block FLOOR_TILE_4 = new WBTCBlock("wbtc_floor_4", SoundType.STONE);
 	public static final Block FLOOR_TILE_5 = new WBTCBlock("wbtc_floor_5", SoundType.STONE);
+	public static final Block FLOOR_TILE_6 = new WBTCBlock("wbtc_floor_6", SoundType.CLOTH);
 }

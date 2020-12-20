@@ -1,5 +1,6 @@
 package rz.mesabrook.wbtc;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -9,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
+import rz.mesabrook.wbtc.tab.WBTCTab;
 
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +31,10 @@ public class Main
     public static CommonProxy proxy;
     
     private static Logger logger;
-
+    
+    // Creative Tab
+    public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {

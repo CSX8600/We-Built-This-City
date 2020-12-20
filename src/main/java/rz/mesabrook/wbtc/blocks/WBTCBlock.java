@@ -21,7 +21,7 @@ public class WBTCBlock extends Block implements IHasModel
 		setSoundType(sound);
 		setHardness(8.0F);
 		setResistance(8.0F);
-		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		setCreativeTab(Main.WBTC_TAB);
 		setHarvestLevel("pickaxe", 0);
 		
 		ModBlocks.BLOCKS.add(this);

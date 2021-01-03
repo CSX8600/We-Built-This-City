@@ -63,4 +63,17 @@ public class ModBlocks
 	public static final Block FLOOR_TILE_4 = new WBTCBlock("wbtc_floor_4", SoundType.STONE);
 	public static final Block FLOOR_TILE_5 = new WBTCBlock("wbtc_floor_5", SoundType.STONE);
 	public static final Block FLOOR_TILE_6 = new WBTCBlock("wbtc_floor_6", SoundType.CLOTH);
+	
+	// Commercial Kitchen Floor Blocks
+	public static final Block FLOOR_KITCHEN_1 = new WBTCBlock("floor_kitchen_1", SoundType.STONE);
+	public static final Block FLOOR_DRAIN_1 = new WBTCBlock("floor_drain_1", SoundType.STONE);
+	public static final Block FLOOR_KITCHEN_2 = new WBTCBlock("floor_kitchen_2", SoundType.STONE);
+	public static final Block FLOOR_DRAIN_2 = new WBTCBlock("floor_drain_2", SoundType.STONE);
+	
+	// Industrial Floor Blocks
+	public static final Block INDUSTRIAL_TILE_1 = new WBTCBlock("floor_danger_1", SoundType.STONE);
+	public static final Block INDUSTRIAL_TILE_2 = new WBTCBlock("floor_danger_2", SoundType.STONE);
+	public static final Block INDUSTRIAL_TILE_3 = new WBTCBlock("floor_danger_3", SoundType.STONE);
+	public static final Block INDUSTRIAL_TILE_4 = new WBTCBlock("floor_danger_4", SoundType.STONE);
+
 }

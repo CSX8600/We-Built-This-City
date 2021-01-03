@@ -3,7 +3,7 @@
   "modid": "wbtc",
   "name": "We Built This City",
   "description": "A basic building mod that adds building blocks.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",

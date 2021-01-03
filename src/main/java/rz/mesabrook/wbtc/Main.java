@@ -23,7 +23,7 @@ public class Main
 	
     public static final String MODID = "wbtc";
     public static final String NAME = "We Built This City";
-    public static final String VERSION = "0.0.1";
+    public static final String VERSION = "0.0.2";
     public static final String CLIENT_PROXY = "rz.mesabrook.wbtc.proxy.ClientProxy";
     public static final String COMMON_PROXY = "rz.mesabrook.wbtc.proxy.CommonProxy";
     

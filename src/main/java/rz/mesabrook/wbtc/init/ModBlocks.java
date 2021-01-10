@@ -65,6 +65,18 @@ public class ModBlocks
 	public static final Block FLOOR_TILE_4 = new WBTCBlock("wbtc_floor_4", SoundType.STONE);
 	public static final Block FLOOR_TILE_5 = new WBTCBlock("wbtc_floor_5", SoundType.STONE);
 	public static final Block FLOOR_TILE_6 = new WBTCBlock("wbtc_floor_6", SoundType.CLOTH);
+	public static final Block FLOOR_TILE_7 = new WBTCBlock("wbtc_floor_7", SoundType.STONE);
+	public static final Block FLOOR_TILE_8 = new WBTCBlock("wbtc_floor_8", SoundType.STONE);
+	public static final Block FLOOR_TILE_9 = new WBTCBlock("wbtc_floor_9", SoundType.STONE);
+	public static final Block FLOOR_TILE_10 = new WBTCBlock("wbtc_floor_10", SoundType.STONE);
+	public static final Block FLOOR_TILE_11 = new WBTCBlock("wbtc_floor_11", SoundType.STONE);
+	public static final Block FLOOR_TILE_12 = new WBTCBlock("wbtc_floor_12", SoundType.STONE);
+	public static final Block FLOOR_TILE_13 = new WBTCBlock("wbtc_floor_13", SoundType.STONE);
+	public static final Block FLOOR_TILE_14 = new WBTCBlock("wbtc_floor_14", SoundType.STONE);
+	public static final Block FLOOR_TILE_15 = new WBTCBlock("wbtc_floor_15", SoundType.STONE);
+	public static final Block FLOOR_TILE_16 = new WBTCBlock("wbtc_floor_16", SoundType.STONE);
+	public static final Block FLOOR_TILE_17 = new WBTCBlock("wbtc_floor_17", SoundType.STONE);
+	public static final Block FLOOR_TILE_18 = new WBTCBlock("wbtc_floor_18", SoundType.STONE);
 	
 	// Commercial Kitchen Floor Blocks
 	public static final Block FLOOR_KITCHEN_1 = new WBTCBlock("floor_kitchen_1", SoundType.STONE);
@@ -78,7 +90,7 @@ public class ModBlocks
 	public static final Block INDUSTRIAL_TILE_3 = new WBTCBlock("floor_danger_3", SoundType.STONE);
 	public static final Block INDUSTRIAL_TILE_4 = new WBTCBlock("floor_danger_4", SoundType.STONE);
 	
-	// Quartz Pillar and Base.
+	// Quartz Pillar and Base. May not make it into next version.
 	public static final Block PILLAR_BASE = new WBTCPillarBase("pillar_base");
 	public static final Block PILLAR_TOP = new WBTCPillarBase("pillar_top");
 	public static final Block PILLAR_POST = new WBTCPillar("wbtc_pillar", 0);

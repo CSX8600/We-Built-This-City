@@ -9,7 +9,7 @@
   "updateUrl": "",
   "authorList": ["RavenholmZombie"],
   "credits": "TrainDevil for the mod's name.",
-  "logoFile": "",
+  "logoFile": "assets/logo.png",
   "screenshots": [],
   "dependencies": []
 }

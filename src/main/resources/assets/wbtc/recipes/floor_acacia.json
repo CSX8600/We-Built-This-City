@@ -1,18 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#  ",
-    "## ",
-    "###"
+    "##",
+    "##"
   ],
   "key": {
     "#": {
-      "item": "minecraft:concrete",
-      "data": 15
+      "item": "minecraft:planks",
+      "data": 4
     }
   },
   "result": {
-    "item": "jabcm:concrete_stairs_black",
+    "item": "wbtc:wbtc_acacia",
     "count": 4
   }
 }

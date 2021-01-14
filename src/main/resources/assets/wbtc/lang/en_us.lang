@@ -1,6 +1,16 @@
 //Creative Tab
 itemGroup.wbtc_tab=We Built This City
 
+//Sods
+item.wood_sod.name=Wooden Sod
+item.stone_sod.name=Stone Sod
+item.iron_sod.name=Iron Sod
+item.gold_sod.name=Golden Sod
+item.diamond_sod.name=Diamond Sod
+
+//Sod Tooltip
+tooltip.wbtc.sod=Sods are worth half of their sword counterparts.
+
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel
 

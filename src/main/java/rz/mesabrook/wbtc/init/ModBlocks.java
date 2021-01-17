@@ -16,7 +16,7 @@ public class ModBlocks
 	// Ceiling Block
 	public static final Block CEILING = new WBTCBlock("panel_ceiling", SoundType.STONE);
 	
-	// Ceiling Blocks - Stone/Concrete/Laminate/WBTC Floor Tiles
+	// Ceiling Blocks
 	public static final Block PANEL_OAK_L = new WBTCBlock("panel_oak_l", SoundType.STONE);
 	public static final Block PANEL_SPRUCE_L = new WBTCBlock("panel_spruce_l", SoundType.STONE);
 	public static final Block PANEL_BIRCH_L = new WBTCBlock("panel_birch_l", SoundType.STONE);
@@ -30,8 +30,27 @@ public class ModBlocks
 	public static final Block PANEL_TILE_4 = new WBTCBlock("panel_floor_tile_4", SoundType.STONE);
 	public static final Block PANEL_TILE_5 = new WBTCBlock("panel_floor_tile_5", SoundType.STONE);
 	public static final Block PANEL_TILE_6 = new WBTCBlock("panel_floor_tile_6", SoundType.CLOTH);
-	
-	// Ceiling Blocks - Wool
+	public static final Block PANEL_TILE_7 = new WBTCBlock("panel_floor_tile_7", SoundType.STONE);
+	public static final Block PANEL_TILE_8 = new WBTCBlock("panel_floor_tile_8", SoundType.STONE);
+	public static final Block PANEL_TILE_9 = new WBTCBlock("panel_floor_tile_9", SoundType.STONE);
+	public static final Block PANEL_TILE_10 = new WBTCBlock("panel_floor_tile_10", SoundType.STONE);
+	public static final Block PANEL_TILE_11 = new WBTCBlock("panel_floor_tile_11", SoundType.STONE);
+	public static final Block PANEL_TILE_12 = new WBTCBlock("panel_floor_tile_12", SoundType.STONE);
+	public static final Block PANEL_TILE_13 = new WBTCBlock("panel_floor_tile_13", SoundType.STONE);
+	public static final Block PANEL_TILE_14 = new WBTCBlock("panel_floor_tile_14", SoundType.STONE);
+	public static final Block PANEL_TILE_15 = new WBTCBlock("panel_floor_tile_15", SoundType.STONE);
+	public static final Block PANEL_TILE_16 = new WBTCBlock("panel_floor_tile_16", SoundType.STONE);
+	public static final Block PANEL_TILE_17 = new WBTCBlock("panel_floor_tile_17", SoundType.STONE);
+	public static final Block PANEL_TILE_18 = new WBTCBlock("panel_floor_tile_18", SoundType.STONE);
+	public static final Block PANEL_DANGER_1 = new WBTCBlock("panel_floor_danger_1", SoundType.STONE);
+	public static final Block PANEL_DANGER_2 = new WBTCBlock("panel_floor_danger_2", SoundType.STONE);
+	public static final Block PANEL_DANGER_3 = new WBTCBlock("panel_floor_danger_3", SoundType.STONE);
+	public static final Block PANEL_DANGER_4 = new WBTCBlock("panel_floor_danger_4", SoundType.STONE);
+	public static final Block PANEL_KITCHEN_1 = new WBTCBlock("panel_floor_kitchen_1", SoundType.STONE);
+	public static final Block PANEL_KITCHEN_2 = new WBTCBlock("panel_floor_kitchen_2", SoundType.STONE);
+	public static final Block PANEL_DRAIN_1 = new WBTCBlock("panel_floor_drain_1", SoundType.STONE);
+	public static final Block PANEL_DRAIN_2 = new WBTCBlock("panel_floor_drain_2", SoundType.STONE);
+
 	public static final Block PANEL_WOOL_WHITE = new WBTCBlock("panel_wool_white", SoundType.CLOTH);
 	public static final Block PANEL_WOOL_ORANGE = new WBTCBlock("panel_wool_orange", SoundType.CLOTH);
 	public static final Block PANEL_WOOL_MAGENTA = new WBTCBlock("panel_wool_magenta", SoundType.CLOTH);

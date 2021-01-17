@@ -13,7 +13,7 @@ import rz.mesabrook.wbtc.util.IHasModel;
 
 public class WBTCBlock extends Block implements IHasModel
 {
-	public WBTCBlock(String name, SoundType sound)
+	public WBTCBlock(String name, SoundType sound, CreativeTabs tab)
 	{
 		super(Material.ROCK);
 		setUnlocalizedName(name);
@@ -21,7 +21,7 @@ public class WBTCBlock extends Block implements IHasModel
 		setSoundType(sound);
 		setHardness(8.0F);
 		setResistance(8.0F);
-		setCreativeTab(Main.WBTC_TAB);
+		setCreativeTab(tab);
 		setHarvestLevel("pickaxe", 0);
 		
 		ModBlocks.BLOCKS.add(this);

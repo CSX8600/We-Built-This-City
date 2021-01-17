@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
+import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
 
 import org.apache.logging.log4j.Logger;
 
@@ -34,6 +35,7 @@ public class Main
     
     // Creative Tab
     public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
+    public static final CreativeTabs WBTC_TAB_CEILING = new WBTCTabCeiling("wbtc_tab_ceiling");
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

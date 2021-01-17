@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
@@ -28,7 +29,7 @@ public class WBTCPillarBase extends Block implements IHasModel
 		setSoundType(SoundType.STONE);
 		setHardness(8.0F);
 		setResistance(8.0F);
-		setCreativeTab(Main.WBTC_TAB);
+		setCreativeTab(CreativeTabs.DECORATIONS);
 		setHarvestLevel("pickaxe", 0);
 		setLightOpacity(15);
 		

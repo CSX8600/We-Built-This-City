@@ -25,13 +25,13 @@ import rz.mesabrook.wbtc.util.IHasModel;
 
 public class BlockHandrail extends Block implements IHasModel
 {
-    protected static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1875D);
-    protected static final AxisAlignedBB WEST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
-    protected static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.8125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-    protected static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
+    protected static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.06D);
+    protected static final AxisAlignedBB WEST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.999D, 1.0D, 1.0D, 1.0D);
+    protected static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.999D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+    protected static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.007D, 1.0D, 1.0D);
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
-	public BlockHandrail(String name, Material mat, SoundType sound)
+	public BlockHandrail(String name, Material mat, SoundType sound, String harvestTool)
 	{
 		super(mat);
 		setUnlocalizedName(name);
@@ -40,7 +40,7 @@ public class BlockHandrail extends Block implements IHasModel
 		setHardness(8.0F);
 		setResistance(8.0F);
 		setCreativeTab(Main.WBTC_TAB);
-		setHarvestLevel("pickaxe", 0);
+		setHarvestLevel(harvestTool, 0);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		
 		ModBlocks.BLOCKS.add(this);

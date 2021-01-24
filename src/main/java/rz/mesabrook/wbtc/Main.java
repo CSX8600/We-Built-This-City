@@ -56,6 +56,6 @@ public class Main
     public void postInit(FMLPostInitializationEvent event)
     {
     	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
-    	logger.info("[We Built This City] Checking to ensure our items are in the OD " + listOfOres);
+    	logger.info("Checking to ensure our items are in the OD " + listOfOres);
     }
 }

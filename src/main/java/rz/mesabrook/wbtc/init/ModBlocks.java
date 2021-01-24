@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
 import rz.mesabrook.wbtc.blocks.WBTCBlock;
@@ -115,6 +116,7 @@ public class ModBlocks
 	public static final Block PILLAR_TOP = new WBTCPillarBase("pillar_top");
 	public static final Block PILLAR_POST = new WBTCPillar("wbtc_pillar", 0);
 	
-	// Iron Handrail
-	public static final Block IRON_HANDRAIL = new BlockHandrail("iron_handrail");
+	// Handrails
+	public static final Block IRON_HANDRAIL = new BlockHandrail("iron_handrail", Material.IRON, SoundType.METAL);
+	public static final Block WOOD_HANDRAIL = new BlockHandrail("wood_handrail", Material.WOOD, SoundType.WOOD);
 }

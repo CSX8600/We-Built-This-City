@@ -31,12 +31,12 @@ public class BlockHandrail extends Block implements IHasModel
     protected static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
-	public BlockHandrail(String name)
+	public BlockHandrail(String name, Material mat, SoundType sound)
 	{
-		super(Material.IRON);
+		super(mat);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setSoundType(SoundType.METAL);
+		setSoundType(sound);
 		setHardness(8.0F);
 		setResistance(8.0F);
 		setCreativeTab(Main.WBTC_TAB);

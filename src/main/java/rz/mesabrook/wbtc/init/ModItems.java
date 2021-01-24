@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import rz.mesabrook.wbtc.items.drinks.WBTC_Beverage;
+import rz.mesabrook.wbtc.items.misc.MiscItem;
 import rz.mesabrook.wbtc.items.weapons.ItemSod;
 
 public class ModItems 
@@ -27,4 +29,7 @@ public class ModItems
 	public static final Item IRON_SOD = new ItemSod("iron_sod", SOD_IRON);
 	public static final Item GOLD_SOD = new ItemSod("gold_sod", SOD_GOLD);
 	public static final Item DIAMOND_SOD = new ItemSod("diamond_sod", SOD_DIAMOND);
+	
+	// Iron Rod
+	public static final Item IRON_ROD = new MiscItem("iron_rod", CreativeTabs.MISC, 64);
 }

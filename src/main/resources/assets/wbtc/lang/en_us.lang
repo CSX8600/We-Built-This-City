@@ -2,12 +2,17 @@
 itemGroup.wbtc_tab=[We Built This City] - Floor Blocks
 itemGroup.wbtc_tab_ceiling=[We Built This City] - Ceiling Panels
 
-//Sods
+//Items
 item.wood_sod.name=Wooden Sod
 item.stone_sod.name=Stone Sod
 item.iron_sod.name=Iron Sod
 item.gold_sod.name=Golden Sod
 item.diamond_sod.name=Diamond Sod
+item.iron_rod.name=Iron Rod
+
+//Handrails
+tile.iron_handrail.name=Iron Handrail
+tile.wood_handrail.name=Wooden Handrail
 
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel

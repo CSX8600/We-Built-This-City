@@ -2,10 +2,12 @@ package rz.mesabrook.wbtc.util.handlers;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
@@ -17,6 +19,8 @@ public class RegistryHandler
 	public static void onItemRegister(RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
+		OreDictionary.registerOre("stickIron", ModItems.IRON_ROD);
+		System.out.println(ModItems.IRON_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickIron");
 	}
 	
 	@SubscribeEvent

@@ -2,6 +2,8 @@ package rz.mesabrook.wbtc;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -9,6 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
@@ -47,5 +50,12 @@ public class Main
     public void init(FMLInitializationEvent event)
     {
         logger.info("[We Built This City] Version " + Main.VERSION + " loaded.");
+    }
+    
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+    	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
+    	logger.info("[We Built This City] Checking to ensure our items are in the OD " + listOfOres);
     }
 }

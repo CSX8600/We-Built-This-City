@@ -7,11 +7,11 @@
   "key": {
     "#": {
       "item": "minecraft:concrete",
-      "data": 10
+      "data": 15
     },
 	"$": {
 	  "item": "minecraft:concrete",
-	  "data": 15
+	  "data": 10
 	}
   },
   "result": {

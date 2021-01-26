@@ -58,6 +58,5 @@ public class Main
     {
     	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
     	logger.info("Checking to ensure our items are in the OD " + listOfOres);
-    	TileEntityHandler.registerTileEntities();
     }
 }

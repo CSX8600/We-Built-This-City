@@ -126,6 +126,6 @@ public class ModBlocks
 	public static final Block CHROMA_GREEN = new ChromaScreen("chroma_green", Material.IRON, SoundType.METAL, "pickaxe");
 	public static final Block CHROMA_BLUE = new ChromaScreen("chroma_blue", Material.IRON, SoundType.METAL, "pickaxe");
 
-	// Bin
-	public static final Block TRASH_BIN = new TrashBin("wbtc_trash");
+	// Bin - The code behind this block is completely broken. Will need a rewrite at some point.
+	//public static final Block TRASH_BIN = new TrashBin("wbtc_trash");
 }

@@ -13,6 +13,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +24,7 @@ import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
 
-public class BlockHandrail extends Block implements IHasModel
+public class ChromaScreen extends Block implements IHasModel
 {
     protected static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.06D);
     protected static final AxisAlignedBB WEST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.999D, 1.0D, 1.0D, 1.0D);
@@ -31,7 +32,7 @@ public class BlockHandrail extends Block implements IHasModel
     protected static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.007D, 1.0D, 1.0D);
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
-	public BlockHandrail(String name, Material mat, SoundType sound, String harvestTool)
+	public ChromaScreen(String name, Material mat, SoundType sound, String harvestTool)
 	{
 		super(mat);
 		setUnlocalizedName(name);
@@ -41,6 +42,8 @@ public class BlockHandrail extends Block implements IHasModel
 		setResistance(8.0F);
 		setCreativeTab(Main.WBTC_TAB);
 		setHarvestLevel(harvestTool, 0);
+		setLightOpacity(0);
+		setLightLevel(0.7F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		
 		ModBlocks.BLOCKS.add(this);
@@ -70,7 +73,8 @@ public class BlockHandrail extends Block implements IHasModel
     {
         return false;
     }
-    
+	
+	
 	@Override
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
@@ -82,6 +86,12 @@ public class BlockHandrail extends Block implements IHasModel
     {
         return false;
     }
+	
+	@Override
+	public BlockRenderLayer getBlockLayer() 
+	{
+		return BlockRenderLayer.CUTOUT;
+	}
   
 	@Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
@@ -151,6 +161,12 @@ public class BlockHandrail extends Block implements IHasModel
 		return false;
 	}
     
+	@Override
+	public float getAmbientOcclusionLightValue(IBlockState state)
+	{
+		return 1;
+	}
+	
 	@Override
 	public void registerModels()
 	{

@@ -8,6 +8,8 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
+import rz.mesabrook.wbtc.blocks.ChromaScreen;
+import rz.mesabrook.wbtc.blocks.TrashBin;
 import rz.mesabrook.wbtc.blocks.WBTCBlock;
 import rz.mesabrook.wbtc.blocks.WBTCPillar;
 import rz.mesabrook.wbtc.blocks.WBTCPillarBase;
@@ -119,4 +121,11 @@ public class ModBlocks
 	// Handrails
 	public static final Block IRON_HANDRAIL = new BlockHandrail("iron_handrail", Material.IRON, SoundType.METAL, "pickaxe");
 	public static final Block WOOD_HANDRAIL = new BlockHandrail("wood_handrail", Material.WOOD, SoundType.WOOD, "axe");
+
+	// Chroma Screen Panels
+	public static final Block CHROMA_GREEN = new ChromaScreen("chroma_green", Material.IRON, SoundType.METAL, "pickaxe");
+	public static final Block CHROMA_BLUE = new ChromaScreen("chroma_blue", Material.IRON, SoundType.METAL, "pickaxe");
+
+	// Bin
+	public static final Block TRASH_BIN = new TrashBin("wbtc_trash");
 }

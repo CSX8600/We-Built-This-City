@@ -15,6 +15,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
+import rz.mesabrook.wbtc.util.handlers.TileEntityHandler;
 
 import org.apache.logging.log4j.Logger;
 
@@ -57,5 +58,6 @@ public class Main
     {
     	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
     	logger.info("Checking to ensure our items are in the OD " + listOfOres);
+    	TileEntityHandler.registerTileEntities();
     }
 }

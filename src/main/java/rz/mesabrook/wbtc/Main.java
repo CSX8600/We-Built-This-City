@@ -11,28 +11,25 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
+import rz.mesabrook.wbtc.util.Reference;
+import rz.mesabrook.wbtc.util.handlers.RegistryHandler;
 import rz.mesabrook.wbtc.util.handlers.TileEntityHandler;
 
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Main.MODID, name = Main.NAME, version = Main.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 public class Main
 {
 	
 	@Instance
 	public static Main instance;
-	
-    public static final String MODID = "wbtc";
-    public static final String NAME = "We Built This City";
-    public static final String VERSION = "0.0.2";
-    public static final String CLIENT_PROXY = "rz.mesabrook.wbtc.proxy.ClientProxy";
-    public static final String COMMON_PROXY = "rz.mesabrook.wbtc.proxy.CommonProxy";
     
-    @SidedProxy(clientSide = Main.CLIENT_PROXY, serverSide = Main.COMMON_PROXY)
+    @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
     public static CommonProxy proxy;
     
     private static Logger logger;
@@ -50,7 +47,7 @@ public class Main
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        logger.info("[We Built This City] Version " + Main.VERSION + " loaded.");
+        logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
     }
     
     @EventHandler
@@ -59,4 +56,10 @@ public class Main
     	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
     	logger.info("Checking to ensure our items are in the OD " + listOfOres);
     }
+    
+	@EventHandler
+	public static void serverInit(FMLServerStartingEvent event)
+	{
+		RegistryHandler.serverRegistries(event);
+	}
 }

@@ -130,6 +130,9 @@ public class ModBlocks
 	public static final Block CHROMA_BLUE = new ChromaScreen("chroma_blue", Material.IRON, SoundType.METAL, "pickaxe");
 	
 	// Meat Blocks - Tier 1
-	public static final Block CUBE_PORK = new FoodBlock("cube_pork", MapColor.PINK, CreativeTabs.FOOD);
-	public static final Block CUBE_BEEF = new FoodBlock("cube_beef", MapColor.RED, CreativeTabs.FOOD);
+	public static final Block CUBE_PORK = new FoodBlock("cube_pork", MapColor.PINK,1,CreativeTabs.FOOD);
+	public static final Block CUBE_BEEF = new FoodBlock("cube_beef", MapColor.RED,1, CreativeTabs.FOOD);
+	public static final Block CUBE_CHICKEN = new FoodBlock("cube_chicken", MapColor.SNOW, 1, CreativeTabs.FOOD);
+	public static final Block CUBE_MUTTON = new FoodBlock("cube_mutton", MapColor.RED, 1, CreativeTabs.FOOD);
+	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, 1, CreativeTabs.FOOD);
 }

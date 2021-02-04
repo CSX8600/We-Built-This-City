@@ -43,6 +43,7 @@ public class FoodBlock extends Block implements IHasModel
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	private int containerItems = 1;
+	private float tierPitch = 1.0F;
 	
 	public FoodBlock(String name, MapColor color, int tier, CreativeTabs tab)
 	{
@@ -64,22 +65,27 @@ public class FoodBlock extends Block implements IHasModel
 		if(tier == 1)
 		{
 			containerItems = 9;
+			tierPitch = 1.0F;
 		}
 		else if(tier == 2)
 		{
 			containerItems = 18;
+			tierPitch = 0.9F;
 		}
 		else if(tier == 3)
 		{
 			containerItems = 27;
+			tierPitch = 0.8F;
 		}
 		else if(tier == 4)
 		{
 			containerItems = 36;
+			tierPitch = 0.7F;
 		}
 		else if(tier == 5)
 		{
 			containerItems = 45;
+			tierPitch = 0.6F;
 		}
 	}
 	
@@ -169,19 +175,19 @@ public class FoodBlock extends Block implements IHasModel
 		}
 		else if(this.getUnlocalizedName().contains("beef"))
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains 9 " + TextFormatting.GREEN + "Raw Steaks");
+			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Steaks");
 		}
 		else if(this.getUnlocalizedName().contains("chicken"))
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains 9 " + TextFormatting.GREEN + "Raw Chickens");
+			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Chickens");
 		}
 		else if(this.getUnlocalizedName().contains("rabbit"))
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains 9 " + TextFormatting.GREEN + "Raw Rabbits");
+			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Rabbits");
 		}
 		else if(this.getUnlocalizedName().contains("mutton"))
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains 9 " + TextFormatting.GREEN + "Raw Mutton");
+			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Mutton");
 		}
 		
 		super.addInformation(stack, world, tooltip, flag);
@@ -192,23 +198,23 @@ public class FoodBlock extends Block implements IHasModel
 	{
 		if(this.getUnlocalizedName().contains("pork"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_PIG_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.ENTITY_PIG_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
 		else if(this.getUnlocalizedName().contains("beef"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_COW_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.ENTITY_COW_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
 		else if(this.getUnlocalizedName().contains("chicken"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
 		else if(this.getUnlocalizedName().contains("mutton"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
 		else if(this.getUnlocalizedName().contains("rabbit"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_ATTACK, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
 		
 		return true;

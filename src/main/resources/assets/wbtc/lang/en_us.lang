@@ -18,6 +18,10 @@ tile.wood_handrail.name=Wooden Handrail
 tile.chroma_green.name=Green Screen Panel
 tile.chroma_blue.name=Blue Screen Panel
 
+//Food blocks
+tile.cube_pork.name=Pork Cube - Tier 1
+tile.cube_beef.name=Beef Cube - Tier 1
+
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel
 

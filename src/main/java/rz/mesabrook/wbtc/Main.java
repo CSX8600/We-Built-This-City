@@ -17,6 +17,7 @@ import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
 import rz.mesabrook.wbtc.util.Reference;
+import rz.mesabrook.wbtc.util.TooltipRandomizer;
 import rz.mesabrook.wbtc.util.handlers.RegistryHandler;
 import rz.mesabrook.wbtc.util.handlers.TileEntityHandler;
 
@@ -55,6 +56,7 @@ public class Main
     {
     	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
     	logger.info("Checking to ensure our items are in the OD " + listOfOres);
+		TooltipRandomizer.ChosenTooltip();
     }
     
 	@EventHandler

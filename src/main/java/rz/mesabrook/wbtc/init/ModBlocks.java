@@ -5,10 +5,13 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
+import rz.mesabrook.wbtc.blocks.FoodBlock;
 import rz.mesabrook.wbtc.blocks.TrashBin;
 import rz.mesabrook.wbtc.blocks.WBTCBlock;
 import rz.mesabrook.wbtc.blocks.WBTCPillar;
@@ -125,7 +128,8 @@ public class ModBlocks
 	// Chroma Screen Panels
 	public static final Block CHROMA_GREEN = new ChromaScreen("chroma_green", Material.IRON, SoundType.METAL, "pickaxe");
 	public static final Block CHROMA_BLUE = new ChromaScreen("chroma_blue", Material.IRON, SoundType.METAL, "pickaxe");
-
-	// Bin - The code behind this block is completely broken. Will need a rewrite at some point.
-	//public static final Block TRASH_BIN = new TrashBin("wbtc_trash");
+	
+	// Meat Blocks - Tier 1
+	public static final Block CUBE_PORK = new FoodBlock("cube_pork", MapColor.PINK, CreativeTabs.FOOD);
+	public static final Block CUBE_BEEF = new FoodBlock("cube_beef", MapColor.RED, CreativeTabs.FOOD);
 }

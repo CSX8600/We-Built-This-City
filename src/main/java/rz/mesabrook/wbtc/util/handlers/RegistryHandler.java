@@ -13,6 +13,7 @@ import rz.mesabrook.wbtc.cmds.CommandTeleportDimension;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
+import rz.mesabrook.wbtc.util.TooltipRandomizer;
 
 @EventBusSubscriber
 public class RegistryHandler 

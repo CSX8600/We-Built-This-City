@@ -52,7 +52,7 @@ public class CommandTeleportDimension extends CommandBase
 	@Override
 	public String getUsage(ICommandSender sender)
 	{
-		return "tpdimension <id>";
+		return "Teleport to another dimension: /tpdimension <id> or /tpdim <id>";
 	}
 	
 	@Override

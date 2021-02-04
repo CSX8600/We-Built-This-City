@@ -40,9 +40,13 @@ public class CustomTeleporter extends Teleporter
 		WorldServer worldServ = mcserv.getWorld(dim);
 		player.addExperienceLevel(0);
 		
+		x = player.getPosition().getX();
+		y = player.getPosition().getY();
+		z = player.getPosition().getZ();
+		
 		if(worldServ == null || worldServ.getMinecraftServer() == null)
 		{
-			throw new IllegalArgumentException("[WBTC] Error. Dimension: " +dim+ " doesn't exist!");
+			throw new IllegalArgumentException("[WBTC] Error. Dimension " +dim+ " doesn't exist!");
 		}
 		
 		worldServ.getMinecraftServer().getPlayerList().transferPlayerToDimension(emp, dim, new CustomTeleporter(worldServ, x, y, z));

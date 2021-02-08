@@ -37,6 +37,7 @@ public class ItemSod extends ItemSword implements IHasModel
 		super.addInformation(stack, world, tooltip, flag);
 	}
 	
+	
 	@Override
 	public void registerModels()
 	{

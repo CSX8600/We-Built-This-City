@@ -19,11 +19,16 @@ tile.chroma_green.name=Green Screen Panel
 tile.chroma_blue.name=Blue Screen Panel
 
 //Food blocks
-tile.cube_pork.name=Pork Cube - Tier 1
-tile.cube_beef.name=Beef Cube - Tier 1
-tile.cube_chicken.name=Chicken Cube - Tier 1
-tile.cube_mutton.name=Mutton Cube - Tier 1
-tile.cube_rabbit.name=Rabbit Cube - Tier 1
+tile.cube_pork.name=Pork Cube
+tile.cube_beef.name=Beef Cube
+tile.cube_chicken.name=Chicken Cube
+tile.cube_mutton.name=Mutton Cube
+tile.cube_rabbit.name=Rabbit Cube
+tile.cube_apples.name=Apple Cube
+
+//Statues
+tile.statue_owo.name=Small Statue - You got noticed
+
 
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel

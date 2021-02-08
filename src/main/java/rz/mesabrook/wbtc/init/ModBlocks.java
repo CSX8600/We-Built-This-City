@@ -10,12 +10,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
+import rz.mesabrook.wbtc.blocks.BlockStatue;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
-import rz.mesabrook.wbtc.blocks.FoodBlock;
 import rz.mesabrook.wbtc.blocks.TrashBin;
 import rz.mesabrook.wbtc.blocks.WBTCBlock;
 import rz.mesabrook.wbtc.blocks.WBTCPillar;
 import rz.mesabrook.wbtc.blocks.WBTCPillarBase;
+import rz.mesabrook.wbtc.blocks.food.FoodBlock;
 
 public class ModBlocks 
 {
@@ -129,10 +130,14 @@ public class ModBlocks
 	public static final Block CHROMA_GREEN = new ChromaScreen("chroma_green", Material.IRON, SoundType.METAL, "pickaxe");
 	public static final Block CHROMA_BLUE = new ChromaScreen("chroma_blue", Material.IRON, SoundType.METAL, "pickaxe");
 	
-	// Meat Blocks - Tier 1
-	public static final Block CUBE_PORK = new FoodBlock("cube_pork", MapColor.PINK,1,CreativeTabs.FOOD);
-	public static final Block CUBE_BEEF = new FoodBlock("cube_beef", MapColor.RED,1, CreativeTabs.FOOD);
-	public static final Block CUBE_CHICKEN = new FoodBlock("cube_chicken", MapColor.SNOW, 1, CreativeTabs.FOOD);
-	public static final Block CUBE_MUTTON = new FoodBlock("cube_mutton", MapColor.RED, 1, CreativeTabs.FOOD);
-	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, 1, CreativeTabs.FOOD);
+	// Food Cubes
+	public static final Block CUBE_PORK = new FoodBlock("cube_pork", MapColor.PINK, SoundType.SLIME,CreativeTabs.FOOD);
+	public static final Block CUBE_BEEF = new FoodBlock("cube_beef", MapColor.RED, SoundType.SLIME, CreativeTabs.FOOD);
+	public static final Block CUBE_CHICKEN = new FoodBlock("cube_chicken", MapColor.SNOW,SoundType.SLIME, CreativeTabs.FOOD);
+	public static final Block CUBE_MUTTON = new FoodBlock("cube_mutton", MapColor.RED, SoundType.SLIME, CreativeTabs.FOOD);
+	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, SoundType.SLIME, CreativeTabs.FOOD);
+	public static final Block CUBE_APPLES = new FoodBlock("cube_apples", MapColor.RED, SoundType.WOOD, CreativeTabs.FOOD);
+	
+	//OwO Statue
+	public static final Block STATUE_OWO = new BlockStatue("statue_owo", MapColor.BLUE);
 }

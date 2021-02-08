@@ -1,4 +1,4 @@
-package rz.mesabrook.wbtc.blocks;
+package rz.mesabrook.wbtc.blocks.food;
 
 import java.util.List;
 import java.util.Random;
@@ -25,6 +25,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -36,6 +37,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
+import rz.mesabrook.wbtc.init.SoundInit;
 import rz.mesabrook.wbtc.util.IHasModel;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
 
@@ -43,63 +45,65 @@ public class FoodBlock extends Block implements IHasModel
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	private int containerItems = 1;
+	private int mainTier = 1;
 	private float tierPitch = 1.0F;
 	
-	public FoodBlock(String name, MapColor color, int tier, CreativeTabs tab)
+	public FoodBlock(String name, MapColor color, SoundType snd, CreativeTabs tab)
 	{
 		super(Material.CLAY, color);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setSoundType(SoundType.SLIME);
+		setSoundType(snd);
 		setHardness(1.0F);
 		setResistance(3.0F);
 		setCreativeTab(tab);
+		setHarvestLevel("sword", 0);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 		
 		TooltipRandomizer.ChosenTooltip();
-		
-		// Tiers
-		if(tier == 1)
+	}
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) 
+	{
+		if(this.getUnlocalizedName().contains("cube_pork"))
 		{
-			containerItems = 9;
-			tierPitch = 1.0F;
+			return Items.PORKCHOP;
 		}
-		else if(tier == 2)
+		else if(this.getUnlocalizedName().contains("cube_beef"))
 		{
-			containerItems = 18;
-			tierPitch = 0.9F;
+			return Items.BEEF;
 		}
-		else if(tier == 3)
+		else if(this.getUnlocalizedName().contains("cube_chicken"))
 		{
-			containerItems = 27;
-			tierPitch = 0.8F;
+			return Items.CHICKEN;
 		}
-		else if(tier == 4)
+		else if(this.getUnlocalizedName().contains("cube_mutton"))
 		{
-			containerItems = 36;
-			tierPitch = 0.7F;
+			return Items.MUTTON;
 		}
-		else if(tier == 5)
+		else if(this.getUnlocalizedName().contains("cube_rabbit"))
 		{
-			containerItems = 45;
-			tierPitch = 0.6F;
+			return Items.RABBIT;
+		}
+		else if(this.getUnlocalizedName().contains("cube_apples"))
+		{
+			return Items.APPLE;
+		}
+		else
+		{
+			return Item.getItemFromBlock(this);
 		}
 	}
 	
 	@Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return true;
-    }
-
-	@Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return true;
-    }
+	public int quantityDropped(Random random)
+	{
+		return 9;
+	}
 	
 	@Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
@@ -167,27 +171,38 @@ public class FoodBlock extends Block implements IHasModel
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag)
 	{
 		// Randomizer
-		tooltip.add(TextFormatting.LIGHT_PURPLE + TooltipRandomizer.result);
+		if(this.getUnlocalizedName().contains("cube_apples"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "How is this even possible?");
+		}
+		else 
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + TooltipRandomizer.result);
+		}
 		
-		if(this.getUnlocalizedName().contains("pork"))
+		if(this.getUnlocalizedName().contains("cube_pork") && mainTier == 1)
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Porkchops");
+			tooltip.add(TextFormatting.AQUA + "Contains 9" + TextFormatting.GREEN + " Raw Porkchops");
 		}
-		else if(this.getUnlocalizedName().contains("beef"))
+		else if(this.getUnlocalizedName().contains("cube_beef") && mainTier == 1)
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Steaks");
+			tooltip.add(TextFormatting.AQUA + "Contains 9" + TextFormatting.GREEN + " Raw Steaks");
 		}
-		else if(this.getUnlocalizedName().contains("chicken"))
+		else if(this.getUnlocalizedName().contains("cube_chicken") && mainTier == 1)
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Chickens");
+			tooltip.add(TextFormatting.AQUA + "Contains 9"+ TextFormatting.GREEN + " Raw Chickens");
 		}
-		else if(this.getUnlocalizedName().contains("rabbit"))
+		else if(this.getUnlocalizedName().contains("cube_rabbit") && mainTier == 1)
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Rabbits");
+			tooltip.add(TextFormatting.AQUA + "Contains 9" + TextFormatting.GREEN + " Raw Rabbits");
 		}
-		else if(this.getUnlocalizedName().contains("mutton"))
+		else if(this.getUnlocalizedName().contains("cube_mutton") && mainTier == 1)
 		{
-			tooltip.add(TextFormatting.AQUA + "Contains " + containerItems + TextFormatting.GREEN + " Raw Mutton");
+			tooltip.add(TextFormatting.AQUA + "Contains 9" + TextFormatting.GREEN + " Raw Mutton");
+		}
+		else if(this.getUnlocalizedName().contains("cube_apples"))
+		{
+			tooltip.add(TextFormatting.AQUA + "Contains 9" + TextFormatting.RED + " Apples");
 		}
 		
 		super.addInformation(stack, world, tooltip, flag);
@@ -196,27 +211,32 @@ public class FoodBlock extends Block implements IHasModel
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
-		if(this.getUnlocalizedName().contains("pork"))
+		if(this.getUnlocalizedName().contains("cube_pork"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_PIG_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			world.playSound(player, pos, SoundEvents.ENTITY_PIG_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
-		else if(this.getUnlocalizedName().contains("beef"))
+		else if(this.getUnlocalizedName().contains("cube_beef"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_COW_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			world.playSound(player, pos, SoundEvents.ENTITY_COW_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
-		else if(this.getUnlocalizedName().contains("chicken"))
+		else if(this.getUnlocalizedName().contains("cube_chicken"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
-		else if(this.getUnlocalizedName().contains("mutton"))
+		else if(this.getUnlocalizedName().contains("cube_mutton"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_AMBIENT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
 		}
-		else if(this.getUnlocalizedName().contains("rabbit"))
+		else if(this.getUnlocalizedName().contains("cube_rabbit"))
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_ATTACK, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+		}
+		else if(this.getUnlocalizedName().contains("cube_apples"))
+		{
+			world.playSound(player, pos, SoundEvents.BLOCK_WOOD_STEP, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		
+		TooltipRandomizer.ChosenTooltip();
 		return true;
 	}
 	

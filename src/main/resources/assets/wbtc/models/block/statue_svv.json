@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"1": "blocks/diamond_block",
-		"2": "blocks/stone_slab_top",
+		"2": "blocks/iron_block",
 		"3": "wbtc:skins/svv",
-		"particle": "blocks/stone_slab_top"
+		"particle": "blocks/iron_block"
 	},
 	"elements": [
 		{

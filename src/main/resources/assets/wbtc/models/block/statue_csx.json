@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "blocks/diamond_block",
-		"2": "blocks/stone_slab_top",
+		"1": "blocks/hardened_clay_stained_red",
+		"2": "blocks/iron_block",
 		"3": "wbtc:skins/csx",
-		"particle": "blocks/stone_slab_top"
+		"particle": "blocks/hardened_clay_stained_red"
 	},
 	"elements": [
 		{

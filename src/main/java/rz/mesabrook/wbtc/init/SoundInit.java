@@ -24,6 +24,7 @@ public class SoundInit
 	public static final SoundEvent LW_TROPHY;
 	public static final SoundEvent MD_TROPHY;
 	public static final SoundEvent SVV_TROPHY;
+	public static final SoundEvent TROPHY_BREAK;
 	
 	static
 	{
@@ -35,6 +36,7 @@ public class SoundInit
 		LW_TROPHY = addSoundsToRegistry("lw_trophy");
 		MD_TROPHY = addSoundsToRegistry("md_trophy");
 		SVV_TROPHY = addSoundsToRegistry("svv_trophy");
+		TROPHY_BREAK = addSoundsToRegistry("trophy_break");
 	}
 	
 	private static SoundEvent addSoundsToRegistry(String soundId)
@@ -60,12 +62,13 @@ public class SoundInit
 				event.getRegistry().registerAll(SoundInit.LW_TROPHY);
 				event.getRegistry().registerAll(SoundInit.MD_TROPHY);
 				event.getRegistry().registerAll(SoundInit.SVV_TROPHY);
+				event.getRegistry().registerAll(SoundInit.TROPHY_BREAK);
 				
 				MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
 			}
 			catch(Exception ex)
 			{
-				logger.error("[WBTC Sounds] ERROR: " + ex);
+				logger.error("[WBTC SoundLoader] ERROR: " + ex);
 			}
 		}
 	}

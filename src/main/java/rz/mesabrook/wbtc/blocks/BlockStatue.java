@@ -34,6 +34,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import rz.mesabrook.wbtc.Main;
@@ -52,7 +54,7 @@ public class BlockStatue extends Block implements IHasModel
 		super(Material.ROCK, color);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setSoundType(SoundType.STONE);
+		setSoundType(SoundType.METAL);
 		setHardness(1.0F);
 		setResistance(3.0F);
 		setCreativeTab(Main.WBTC_TAB);
@@ -212,6 +214,12 @@ public class BlockStatue extends Block implements IHasModel
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
+		Random rand = new Random();
+		float pitch = 0.5F + rand.nextFloat();
+		
+		if (pitch > 1.25F) {pitch = 1.25F;}
+		else if(pitch < 0.75F) {pitch = 0.75F;}
+		
 		if(this.getUnlocalizedName().contains("statue_owo"))
 		{
 			world.playSound(player, pos, SoundInit.OWO_SFX, SoundCategory.BLOCKS, 0.2F, 1.0F);
@@ -222,7 +230,8 @@ public class BlockStatue extends Block implements IHasModel
 		}
 		else if(this.getUnlocalizedName().contains("statue_csx"))
 		{
-			world.playSound(player, pos, SoundInit.CSX_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			
+			world.playSound(player, pos, SoundInit.CSX_TROPHY, SoundCategory.BLOCKS, 0.2F, pitch);
 		}
 		else if(this.getUnlocalizedName().contains("statue_td"))
 		{
@@ -247,6 +256,51 @@ public class BlockStatue extends Block implements IHasModel
 		
 		return true;
 	}
+	
+	@Override
+	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		if(player != null)
+		{
+			if(this.getUnlocalizedName().contains("statue_owo"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_csx"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_rz"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_td"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_tlz"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_md"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_lw"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else if(this.getUnlocalizedName().contains("statue_svv"))
+			{
+				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else
+			{
+				// do nothing lolxd
+			}
+		}
+	}
+	
 	@Override
 	public void registerModels()
 	{

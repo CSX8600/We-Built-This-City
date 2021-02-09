@@ -6,5 +6,6 @@
 	"tlz_trophy": {"category": "master", "sounds": [{"name": "wbtc:tlz_trophy", "stream": true}]},
 	"lw_trophy": {"category": "master", "sounds": [{"name": "wbtc:lw_trophy", "stream": true}]},
 	"md_trophy": {"category": "master", "sounds": [{"name": "wbtc:md_trophy", "stream": true}]},
-	"svv_trophy": {"category": "master", "sounds": [{"name": "wbtc:svv_trophy", "stream": true}]}
+	"svv_trophy": {"category": "master", "sounds": [{"name": "wbtc:svv_trophy", "stream": true}]},
+	"trophy_break": {"category": "master", "sounds": [{"name": "wbtc:trophy_break", "stream": true}]}
 }

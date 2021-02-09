@@ -1,6 +1,7 @@
 //Creative Tabs
 itemGroup.wbtc_tab=[We Built This City] - Floor Blocks
 itemGroup.wbtc_tab_ceiling=[We Built This City] - Ceiling Panels
+itemGroup.wbtc_tab_trophy=[We Built This City] - Trophies
 
 //Items
 item.wood_sod.name=Wooden Sod
@@ -9,6 +10,9 @@ item.iron_sod.name=Iron Sod
 item.gold_sod.name=Golden Sod
 item.diamond_sod.name=Diamond Sod
 item.iron_rod.name=Iron Rod
+
+//Sign stand
+tile.sign_stand.name=Portable Road Sign Stand
 
 //Handrails
 tile.iron_handrail.name=Iron Handrail

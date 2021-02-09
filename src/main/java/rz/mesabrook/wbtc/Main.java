@@ -16,6 +16,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
+import rz.mesabrook.wbtc.tab.WBTCTrophyTab;
 import rz.mesabrook.wbtc.util.Reference;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
 import rz.mesabrook.wbtc.util.handlers.RegistryHandler;
@@ -35,9 +36,10 @@ public class Main
     
     private static Logger logger;
     
-    // Creative Tab
+    // Creative Tabs
     public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
     public static final CreativeTabs WBTC_TAB_CEILING = new WBTCTabCeiling("wbtc_tab_ceiling");
+    public static final CreativeTabs WBTC_TAB_TROPHY = new WBTCTrophyTab("wbtc_tab_trophy");
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

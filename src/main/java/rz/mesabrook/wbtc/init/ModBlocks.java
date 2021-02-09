@@ -14,6 +14,7 @@ import rz.mesabrook.wbtc.blocks.BlockStatue;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
 import rz.mesabrook.wbtc.blocks.TrashBin;
 import rz.mesabrook.wbtc.blocks.WBTCBlock;
+import rz.mesabrook.wbtc.blocks.SignStand;
 import rz.mesabrook.wbtc.blocks.WBTCPillar;
 import rz.mesabrook.wbtc.blocks.WBTCPillarBase;
 import rz.mesabrook.wbtc.blocks.food.FoodBlock;
@@ -137,6 +138,9 @@ public class ModBlocks
 	public static final Block CUBE_MUTTON = new FoodBlock("cube_mutton", MapColor.RED, SoundType.SLIME, CreativeTabs.FOOD);
 	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, SoundType.SLIME, CreativeTabs.FOOD);
 	public static final Block CUBE_APPLES = new FoodBlock("cube_apples", MapColor.RED, SoundType.WOOD, CreativeTabs.FOOD);
+	
+	// Sign stand
+	public static final Block SIGN_STAND = new SignStand("sign_stand", Material.ROCK, SoundType.STONE, 1.0F, 1.0F, "pickaxe", 0, Main.WBTC_TAB);
 	
 	// Trophies
 	public static final Block STATUE_OWO = new BlockStatue("statue_owo", MapColor.BLUE);

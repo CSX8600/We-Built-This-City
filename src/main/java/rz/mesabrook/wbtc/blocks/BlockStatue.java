@@ -226,24 +226,24 @@ public class BlockStatue extends Block implements IHasModel
 		}
 		else if(this.getUnlocalizedName().contains("statue_rz"))
 		{
-			world.playSound(player, pos, SoundInit.RZ_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(player, pos, SoundInit.RZ_TROPHY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		else if(this.getUnlocalizedName().contains("statue_csx"))
 		{
 			
-			world.playSound(player, pos, SoundInit.CSX_TROPHY, SoundCategory.BLOCKS, 0.2F, pitch);
+			world.playSound(player, pos, SoundInit.CSX_TROPHY, SoundCategory.BLOCKS, 1.0F, pitch);
 		}
 		else if(this.getUnlocalizedName().contains("statue_td"))
 		{
-			world.playSound(player, pos, SoundInit.TD_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(player, pos, SoundInit.TD_TROPHY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		else if(this.getUnlocalizedName().contains("statue_tlz"))
 		{
-			world.playSound(player, pos, SoundInit.TLZ_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(player, pos, SoundInit.TLZ_TROPHY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		else if(this.getUnlocalizedName().contains("statue_md"))
 		{
-			world.playSound(player, pos, SoundInit.MD_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(player, pos, SoundInit.MD_TROPHY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		else if(this.getUnlocalizedName().contains("statue_lw"))
 		{
@@ -251,7 +251,7 @@ public class BlockStatue extends Block implements IHasModel
 		}
 		else if(this.getUnlocalizedName().contains("statue_svv"))
 		{
-			world.playSound(player, pos, SoundInit.SVV_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(player, pos, SoundInit.SVV_TROPHY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		
 		return true;

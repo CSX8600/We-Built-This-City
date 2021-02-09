@@ -1,5 +1,7 @@
 package rz.mesabrook.wbtc.init;
 
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,11 +14,27 @@ import rz.mesabrook.wbtc.util.Reference;
 
 public class SoundInit 
 {
+	private static Logger logger;
+	
 	public static final SoundEvent OWO_SFX;
+	public static final SoundEvent RZ_TROPHY;
+	public static final SoundEvent CSX_TROPHY;
+	public static final SoundEvent TD_TROPHY;
+	public static final SoundEvent TLZ_TROPHY;
+	public static final SoundEvent LW_TROPHY;
+	public static final SoundEvent MD_TROPHY;
+	public static final SoundEvent SVV_TROPHY;
 	
 	static
 	{
 		OWO_SFX = addSoundsToRegistry("owo");
+		RZ_TROPHY = addSoundsToRegistry("rz_trophy");
+		CSX_TROPHY = addSoundsToRegistry("csx_trophy");
+		TD_TROPHY = addSoundsToRegistry("td_trophy");
+		TLZ_TROPHY = addSoundsToRegistry("tlz_trophy");
+		LW_TROPHY = addSoundsToRegistry("lw_trophy");
+		MD_TROPHY = addSoundsToRegistry("md_trophy");
+		SVV_TROPHY = addSoundsToRegistry("svv_trophy");
 	}
 	
 	private static SoundEvent addSoundsToRegistry(String soundId)
@@ -32,8 +50,23 @@ public class SoundInit
 		@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 		public void registerSoundEvents(RegistryEvent.Register<SoundEvent> event)
 		{
-			event.getRegistry().registerAll(SoundInit.OWO_SFX);
-			MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
+			try
+			{
+				event.getRegistry().registerAll(SoundInit.OWO_SFX);
+				event.getRegistry().registerAll(SoundInit.RZ_TROPHY);
+				event.getRegistry().registerAll(SoundInit.CSX_TROPHY);
+				event.getRegistry().registerAll(SoundInit.TD_TROPHY);
+				event.getRegistry().registerAll(SoundInit.TLZ_TROPHY);
+				event.getRegistry().registerAll(SoundInit.LW_TROPHY);
+				event.getRegistry().registerAll(SoundInit.MD_TROPHY);
+				event.getRegistry().registerAll(SoundInit.SVV_TROPHY);
+				
+				MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
+			}
+			catch(Exception ex)
+			{
+				logger.error("[WBTC Sounds] ERROR: " + ex);
+			}
 		}
 	}
 }

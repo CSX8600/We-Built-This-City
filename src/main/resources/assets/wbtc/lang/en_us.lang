@@ -27,8 +27,14 @@ tile.cube_rabbit.name=Rabbit Cube
 tile.cube_apples.name=Apple Cube
 
 //Statues
-tile.statue_owo.name=Small Statue - You got noticed
-
+tile.statue_owo.name=Trophy - Outstanding OwO Behavior
+tile.statue_rz.name=Trophy for RavenholmZombie - Mesabrook Founders Award
+tile.statue_csx.name=Trophy for CSX8600 - Mesabrook Founders Award
+tile.statue_td.name=Trophy for TrainDevil - Mesabrook Founders Award
+tile.statue_tlz.name=Trophy for timelady_zoe - Mesabrook Founders Award
+tile.statue_md.name=Trophy for MineDouble - Mesabrook Founders Award
+tile.statue_lw.name=Trophy for lilWeece - Mesabrook Founders Award
+tile.statue_svv.name=Trophy for StarVicVader - Mesabrook Founders Award
 
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel

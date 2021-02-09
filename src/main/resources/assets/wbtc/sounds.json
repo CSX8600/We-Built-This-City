@@ -1,3 +1,10 @@
 {
-    "owo": {"category": "master","sounds": [{"name": "wbtc:owo","stream": true}]}
+    "owo": {"category": "master","sounds": [{"name": "wbtc:owo","stream": true}]},
+	"rz_trophy": {"category": "master", "sounds": [{"name": "wbtc:rz_trophy", "stream": true}]},
+	"csx_trophy": {"category": "master", "sounds": [{"name": "wbtc:csx_trophy", "stream": true}]},
+	"td_trophy": {"category": "master", "sounds": [{"name": "wbtc:td_trophy", "stream": true}]},
+	"tlz_trophy": {"category": "master", "sounds": [{"name": "wbtc:tlz_trophy", "stream": true}]},
+	"lw_trophy": {"category": "master", "sounds": [{"name": "wbtc:lw_trophy", "stream": true}]},
+	"md_trophy": {"category": "master", "sounds": [{"name": "wbtc:md_trophy", "stream": true}]},
+	"svv_trophy": {"category": "master", "sounds": [{"name": "wbtc:svv_trophy", "stream": true}]}
 }

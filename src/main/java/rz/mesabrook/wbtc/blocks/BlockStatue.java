@@ -161,23 +161,90 @@ public class BlockStatue extends Block implements IHasModel
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
     
+    // Tooltips
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag)
 	{
 		if(this.getUnlocalizedName().contains("statue_owo"))
 		{
-			tooltip.add(TextFormatting.LIGHT_PURPLE + "OWO what's this?");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + "Being noticed by senpai (This is a test trophy)");
+		}
+		else if(this.getUnlocalizedName().contains("statue_rz"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_csx"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + "Founding the nation.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_td"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_tlz"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_lw"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_svv"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
+		}
+		else if(this.getUnlocalizedName().contains("statue_md"))
+		{
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Being one of Mesabrook's founding members.");
 		}
 	}
 	
+	// Play a sound when the player right-clicks on a statue.
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
 		if(this.getUnlocalizedName().contains("statue_owo"))
 		{
-			world.playSound(player, pos, SoundInit.OWO_SFX, SoundCategory.BLOCKS, 0.6F, 1.0F);
+			world.playSound(player, pos, SoundInit.OWO_SFX, SoundCategory.BLOCKS, 0.2F, 1.0F);
 		}
+		else if(this.getUnlocalizedName().contains("statue_rz"))
+		{
+			world.playSound(player, pos, SoundInit.RZ_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_csx"))
+		{
+			world.playSound(player, pos, SoundInit.CSX_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_td"))
+		{
+			world.playSound(player, pos, SoundInit.TD_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_tlz"))
+		{
+			world.playSound(player, pos, SoundInit.TLZ_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_md"))
+		{
+			world.playSound(player, pos, SoundInit.MD_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_lw"))
+		{
+			world.playSound(player, pos, SoundInit.LW_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		else if(this.getUnlocalizedName().contains("statue_svv"))
+		{
+			world.playSound(player, pos, SoundInit.SVV_TROPHY, SoundCategory.BLOCKS, 0.2F, 1.0F);
+		}
+		
 		return true;
 	}
 	@Override

@@ -233,7 +233,7 @@ public class FoodBlock extends Block implements IHasModel
 		}
 		else if(this.getUnlocalizedName().contains("cube_apples"))
 		{
-			world.playSound(player, pos, SoundEvents.BLOCK_WOOD_STEP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(player, pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		}
 		
 		TooltipRandomizer.ChosenTooltip();

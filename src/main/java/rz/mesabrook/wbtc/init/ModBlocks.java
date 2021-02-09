@@ -138,6 +138,13 @@ public class ModBlocks
 	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, SoundType.SLIME, CreativeTabs.FOOD);
 	public static final Block CUBE_APPLES = new FoodBlock("cube_apples", MapColor.RED, SoundType.WOOD, CreativeTabs.FOOD);
 	
-	//OwO Statue
+	// Trophies
 	public static final Block STATUE_OWO = new BlockStatue("statue_owo", MapColor.BLUE);
+	public static final Block STATUE_RZ = new BlockStatue("statue_rz", MapColor.GRAY);
+	public static final Block STATUE_CSX = new BlockStatue("statue_csx", MapColor.GRAY);
+	public static final Block STATUE_TD = new BlockStatue("statue_td", MapColor.GRAY);
+	public static final Block STATUE_TLZ = new BlockStatue("statue_tlz", MapColor.GRAY);
+	public static final Block STATUE_MD = new BlockStatue("statue_md", MapColor.GRAY);
+	public static final Block STATUE_LW = new BlockStatue("statue_lw", MapColor.GRAY);
+	public static final Block STATUE_SVV = new BlockStatue("statue_svv", MapColor.GRAY);
 }

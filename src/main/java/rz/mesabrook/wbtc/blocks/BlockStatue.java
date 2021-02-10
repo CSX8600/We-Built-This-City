@@ -62,7 +62,7 @@ public class BlockStatue extends Block implements IHasModel
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		
 		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()).setMaxStackSize(1));
 	}
 	
 	@Override
@@ -264,35 +264,35 @@ public class BlockStatue extends Block implements IHasModel
 		{
 			if(this.getUnlocalizedName().contains("statue_owo"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_csx"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_rz"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_td"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_tlz"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_md"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_lw"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else if(this.getUnlocalizedName().contains("statue_svv"))
 			{
-				world.playSound(player, pos, SoundInit.TROPHY_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(player, pos, SoundInit.OOF, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else
 			{

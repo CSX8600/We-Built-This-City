@@ -10,6 +10,12 @@ item.iron_sod.name=Iron Sod
 item.gold_sod.name=Golden Sod
 item.diamond_sod.name=Diamond Sod
 item.iron_rod.name=Iron Rod
+item.aluminum_rod.name=Aluminum Rod
+item.ingot_aluminum.name=Aluminum Ingot
+item.nugget_aluminum.name=Aluminum Nugget
+
+//Misc Blocks
+tile.aluminum_block.name=Block of Aluminum
 
 //Sign stand
 tile.sign_stand.name=Portable Road Sign Stand
@@ -137,3 +143,7 @@ tile.floor_danger_4.name=Industrial Floor Tile - White Warning Stripes
 tile.pillar_base.name=Pillar Base
 tile.wbtc_pillar.name=Pillar
 tile.pillar_top.name=Pillar Top
+
+//Misc Blocks
+tile.white_stone.name=Chalked Stone
+tile.epic_slab.name=Smoothed Stone

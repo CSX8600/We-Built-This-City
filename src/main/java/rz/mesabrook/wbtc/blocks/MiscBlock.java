@@ -12,7 +12,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -22,9 +24,9 @@ import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
 
-public class WBTCBlock extends Block implements IHasModel
+public class MiscBlock extends Block implements IHasModel
 {
-	public WBTCBlock(String name, SoundType sound, CreativeTabs tab)
+	public MiscBlock(String name, SoundType sound, CreativeTabs tab)
 	{
 		super(Material.ROCK);
 		setUnlocalizedName(name);
@@ -50,6 +52,20 @@ public class WBTCBlock extends Block implements IHasModel
 		}
 		
 		super.addInformation(stack, world, tooltip, flag);
+	}
+	
+	// For the Aluminum Block
+	@Override
+	public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
+	{
+		if(this.getUnlocalizedName().contains("aluminum_block"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	@Override

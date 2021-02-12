@@ -23,7 +23,16 @@ public class RegistryHandler
 	{
 		event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
 		OreDictionary.registerOre("stickIron", ModItems.IRON_ROD);
+		OreDictionary.registerOre("stickAluminum", ModItems.ALUMINUM_ROD);
+		OreDictionary.registerOre("ingotAluminum", ModItems.ALUMINUM_INGOT);
+		OreDictionary.registerOre("nuggetAluminum", ModItems.ALUMINUM_NUGGET);
+		OreDictionary.registerOre("blockAluminum", ModBlocks.CUBE_ALUMINUM);
+		
 		System.out.println(ModItems.IRON_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickIron");
+		System.out.println(ModItems.ALUMINUM_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickAluminum");
+		System.out.println(ModItems.ALUMINUM_INGOT.getUnlocalizedName() + " has been added to the Ore Dictionary under ingotAluminum");
+		System.out.println(ModItems.ALUMINUM_NUGGET.getUnlocalizedName() + " has been added to the Ore Dictionary under nuggetAluminum");
+		System.out.println(ModBlocks.CUBE_ALUMINUM.getUnlocalizedName() + " has been added to the Ore Dictionary under blockAluminum");
 	}
 	
 	@SubscribeEvent

@@ -56,8 +56,13 @@ public class Main
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-    	NonNullList<ItemStack> listOfOres = OreDictionary.getOres("stickIron");
-    	logger.info("Checking to ensure our items are in the OD " + listOfOres);
+    	NonNullList<ItemStack> ironStick = OreDictionary.getOres("stickIron");
+    	NonNullList<ItemStack> aluminumStick = OreDictionary.getOres("stickAluminum");
+    	NonNullList<ItemStack> aluminumIngot = OreDictionary.getOres("ingotAluminum");
+    	NonNullList<ItemStack> aluminumNug = OreDictionary.getOres("nuggetAluminum");
+    	NonNullList<ItemStack> aluminumBlock = OreDictionary.getOres("blockAluminum");
+    	
+    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock);
 		TooltipRandomizer.ChosenTooltip();
     }
     

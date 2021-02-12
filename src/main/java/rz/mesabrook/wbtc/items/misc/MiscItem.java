@@ -22,6 +22,7 @@ public class MiscItem extends Item implements IHasModel
 		setRegistryName(name);
 		setCreativeTab(tab);
 		setMaxStackSize(stack);
+		setCreativeTab(tab);
 		
 		ModItems.ITEMS.add(this);
 	}

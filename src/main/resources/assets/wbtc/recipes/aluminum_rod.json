@@ -2,26 +2,21 @@
     "type": "minecraft:crafting_shaped",
     "pattern":
     [
+        "  x",
         " x ",
-        " x ",
-        "zxz"
+        "x  "
     ],
     "key":
     {
         "x":
         {
             "type": "forge:ore_dict",
-            "ore": "stickAluminum"
-        },
-		"z":
-		{
-			"item": "minecraft:dye",
-			"data": 14
-		}
+            "ore": "nuggetAluminum"
+        }
     },
     "result":
     {
-        "item": "wbtc:sign_stand",
-        "count": 1
+        "item": "wbtc:aluminum_rod",
+        "count": 3
     }
 }

@@ -30,6 +30,9 @@ public class ModItems
 	public static final Item GOLD_SOD = new ItemSod("gold_sod", SOD_GOLD);
 	public static final Item DIAMOND_SOD = new ItemSod("diamond_sod", SOD_DIAMOND);
 	
-	// Iron Rod
+	// Metals
 	public static final Item IRON_ROD = new MiscItem("iron_rod", CreativeTabs.MISC, 64);
+	public static final Item ALUMINUM_ROD = new MiscItem("aluminum_rod", CreativeTabs.MISC, 64);
+	public static final Item ALUMINUM_INGOT = new MiscItem("ingot_aluminum", CreativeTabs.MATERIALS, 64);
+	public static final Item ALUMINUM_NUGGET = new MiscItem("nugget_aluminum", CreativeTabs.MATERIALS, 64);
 }

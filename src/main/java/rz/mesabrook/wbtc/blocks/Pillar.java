@@ -16,12 +16,12 @@ import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
 
-public class WBTCPillar extends Block implements IHasModel
+public class Pillar extends Block implements IHasModel
 {
 	
 	public static final AxisAlignedBB CORE = new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 1.0D, 0.75D);
 	
-	public WBTCPillar(String name, int light)
+	public Pillar(String name, int light)
 	{
 		super(Material.ROCK);
 		setUnlocalizedName(name);

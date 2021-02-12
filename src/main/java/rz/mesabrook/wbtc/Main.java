@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -34,7 +35,8 @@ public class Main
     @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
     public static CommonProxy proxy;
     
-    private static Logger logger;
+    public static Logger logger;
+    public static boolean IE_LOADED = false;
     
     // Creative Tabs
     public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
@@ -45,6 +47,8 @@ public class Main
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        IE_LOADED = Loader.isModLoaded("immersiveengineering");
+        RegistryHandler.preInitRegistries(event);
     }
 
     @EventHandler
@@ -61,8 +65,9 @@ public class Main
     	NonNullList<ItemStack> aluminumIngot = OreDictionary.getOres("ingotAluminum");
     	NonNullList<ItemStack> aluminumNug = OreDictionary.getOres("nuggetAluminum");
     	NonNullList<ItemStack> aluminumBlock = OreDictionary.getOres("blockAluminum");
+    	NonNullList<ItemStack> aluminumOre = OreDictionary.getOres("oreAluminum");
     	
-    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock);
+    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre);
 		TooltipRandomizer.ChosenTooltip();
     }
     

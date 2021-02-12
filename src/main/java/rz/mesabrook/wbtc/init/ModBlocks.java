@@ -144,8 +144,9 @@ public class ModBlocks
 	public static final Block CUBE_RABBIT = new FoodBlock("cube_rabbit", MapColor.PINK, SoundType.SLIME, CreativeTabs.FOOD);
 	public static final Block CUBE_APPLES = new FoodBlock("cube_apples", MapColor.RED, SoundType.WOOD, CreativeTabs.FOOD);
 	
-	// Aluminum Block
+	// Aluminum
 	public static final Block CUBE_ALUMINUM = new MiscBlock("aluminum_block", SoundType.METAL, CreativeTabs.BUILDING_BLOCKS);
+	public static final Block ALUMINUM_ORE = new MiscBlock("wbtc_aluminum_ore", SoundType.STONE, CreativeTabs.BUILDING_BLOCKS);
 	
 	// Sign stand
 	public static final Block SIGN_STAND = new SignStand("sign_stand", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, Main.WBTC_TAB);

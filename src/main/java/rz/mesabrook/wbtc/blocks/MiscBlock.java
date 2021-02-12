@@ -50,6 +50,10 @@ public class MiscBlock extends Block implements IHasModel
 		{
 			tooltip.add(TextFormatting.AQUA + "It's not a bug, it's a " + TextFormatting.OBFUSCATED + "Featuretm");
 		}
+		else if(this.getUnlocalizedName().contains("aluminum_block"))
+		{
+			tooltip.add(TextFormatting.AQUA + "Can be used as a Beacon base");
+		}
 		
 		super.addInformation(stack, world, tooltip, flag);
 	}

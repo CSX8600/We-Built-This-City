@@ -16,6 +16,7 @@ item.nugget_aluminum.name=Aluminum Nugget
 
 //Misc Blocks
 tile.aluminum_block.name=Block of Aluminum
+tile.wbtc_aluminum_ore.name=Aluminum Ore
 
 //Sign stand
 tile.sign_stand.name=Portable Road Sign Stand

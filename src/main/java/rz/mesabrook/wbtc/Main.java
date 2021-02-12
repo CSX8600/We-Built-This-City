@@ -13,7 +13,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import rz.mesabrook.wbtc.init.ModBlocks;
+import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
@@ -69,6 +72,9 @@ public class Main
     	
     	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre);
 		TooltipRandomizer.ChosenTooltip();
+		
+		GameRegistry.addSmelting(ModBlocks.ALUMINUM_ORE, new ItemStack(ModItems.ALUMINUM_INGOT), 69);
+		Main.logger.info("Aluminum Ore Smelting Recipe Registered.");
     }
     
 	@EventHandler

@@ -35,4 +35,5 @@ public class ModItems
 	public static final Item ALUMINUM_ROD = new MiscItem("aluminum_rod", CreativeTabs.MISC, 64);
 	public static final Item ALUMINUM_INGOT = new MiscItem("ingot_aluminum", CreativeTabs.MATERIALS, 64);
 	public static final Item ALUMINUM_NUGGET = new MiscItem("nugget_aluminum", CreativeTabs.MATERIALS, 64);
+	public static final Item ALUMINUM_DUST = new MiscItem("aluminum_dust", CreativeTabs.MATERIALS, 64);
 }

@@ -13,6 +13,7 @@ item.iron_rod.name=Iron Rod
 item.aluminum_rod.name=Aluminum Rod
 item.ingot_aluminum.name=Aluminum Ingot
 item.nugget_aluminum.name=Aluminum Nugget
+item.aluminum_dust.name=Aluminum Grit
 
 //Misc Blocks
 tile.aluminum_block.name=Block of Aluminum

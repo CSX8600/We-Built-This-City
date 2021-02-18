@@ -40,6 +40,7 @@ public class Main
     
     public static Logger logger;
     public static boolean IE_LOADED = false;
+    public static boolean JABCM_LOADED = false;
     
     // Creative Tabs
     public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
@@ -51,6 +52,7 @@ public class Main
     {
         logger = event.getModLog();
         IE_LOADED = Loader.isModLoaded("immersiveengineering");
+        JABCM_LOADED = Loader.isModLoaded("jabcm");
         RegistryHandler.preInitRegistries(event);
     }
 
@@ -69,8 +71,9 @@ public class Main
     	NonNullList<ItemStack> aluminumNug = OreDictionary.getOres("nuggetAluminum");
     	NonNullList<ItemStack> aluminumBlock = OreDictionary.getOres("blockAluminum");
     	NonNullList<ItemStack> aluminumOre = OreDictionary.getOres("oreAluminum");
+    	NonNullList<ItemStack> aluminumDust = OreDictionary.getOres("dustAluminum");
     	
-    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre);
+    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre + aluminumDust);
 		TooltipRandomizer.ChosenTooltip();
 		
 		GameRegistry.addSmelting(ModBlocks.ALUMINUM_ORE, new ItemStack(ModItems.ALUMINUM_INGOT), 69);

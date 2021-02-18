@@ -34,6 +34,7 @@ public class RegistryHandler
 		OreDictionary.registerOre("nuggetAluminum", ModItems.ALUMINUM_NUGGET);
 		OreDictionary.registerOre("blockAluminum", ModBlocks.CUBE_ALUMINUM);
 		OreDictionary.registerOre("oreAluminum", ModBlocks.ALUMINUM_ORE);
+		OreDictionary.registerOre("dustAluminum", ModItems.ALUMINUM_DUST);
 		
 		Main.logger.info(ModItems.IRON_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickIron");
 		Main.logger.info(ModItems.ALUMINUM_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickAluminum");
@@ -41,6 +42,7 @@ public class RegistryHandler
 		Main.logger.info(ModItems.ALUMINUM_NUGGET.getUnlocalizedName() + " has been added to the Ore Dictionary under nuggetAluminum");
 		Main.logger.info(ModBlocks.CUBE_ALUMINUM.getUnlocalizedName() + " has been added to the Ore Dictionary under blockAluminum");
 		Main.logger.info(ModBlocks.ALUMINUM_ORE.getUnlocalizedName() + " has been added to the Ore Dictionary under oreAluminum");
+		Main.logger.info(ModItems.ALUMINUM_DUST.getUnlocalizedName() + " has been added to the Ore Dictionary under dustAluminum");
 	}
 	
 	@SubscribeEvent
@@ -78,7 +80,17 @@ public class RegistryHandler
 		}
 		else 
 		{
-			Main.logger.info("Immersive Engineering detected. WBTC Aluminum Ore gen disabled. Use IE's ore instead.");
+			Main.logger.warn("Immersive Engineering detected. WBTC Aluminum Ore gen disabled. Use IE's ore instead.");
+		}
+		
+		if(!Main.JABCM_LOADED)
+		{
+			Main.logger.info("WBTC goes great with the Just A Basic Concrete Mod!");
+			Main.logger.info("Download it today! https://bit.ly/3jHSloq");
+		}
+		else
+		{
+			Main.logger.info("Thank you for using JABCM!");
 		}
 	}
 	

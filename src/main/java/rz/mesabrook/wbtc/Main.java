@@ -24,7 +24,6 @@ import rz.mesabrook.wbtc.tab.WBTCTrophyTab;
 import rz.mesabrook.wbtc.util.Reference;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
 import rz.mesabrook.wbtc.util.handlers.RegistryHandler;
-import rz.mesabrook.wbtc.util.handlers.TileEntityHandler;
 
 import org.apache.logging.log4j.Logger;
 

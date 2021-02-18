@@ -13,7 +13,6 @@ import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
 import rz.mesabrook.wbtc.blocks.BlockStatue;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
-import rz.mesabrook.wbtc.blocks.TrashBin;
 import rz.mesabrook.wbtc.blocks.MiscBlock;
 import rz.mesabrook.wbtc.blocks.SignStand;
 import rz.mesabrook.wbtc.blocks.Pillar;

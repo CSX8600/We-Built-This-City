@@ -26,6 +26,8 @@ public class SoundInit
 	public static final SoundEvent SVV_TROPHY;
 	public static final SoundEvent TROPHY_BREAK;
 	public static final SoundEvent OOF;
+	public static final SoundEvent CAN_OPEN;
+	public static final SoundEvent CAN_CLOSE;
 	
 	static
 	{
@@ -39,6 +41,8 @@ public class SoundInit
 		SVV_TROPHY = addSoundsToRegistry("svv_trophy");
 		TROPHY_BREAK = addSoundsToRegistry("trophy_break");
 		OOF = addSoundsToRegistry("oof");
+		CAN_OPEN = addSoundsToRegistry("can_open");
+		CAN_CLOSE = addSoundsToRegistry("can_close");
 	}
 	
 	private static SoundEvent addSoundsToRegistry(String soundId)
@@ -66,6 +70,8 @@ public class SoundInit
 				event.getRegistry().registerAll(SoundInit.SVV_TROPHY);
 				event.getRegistry().registerAll(SoundInit.TROPHY_BREAK);
 				event.getRegistry().registerAll(SoundInit.OOF);
+				event.getRegistry().registerAll(SoundInit.CAN_OPEN);
+				event.getRegistry().registerAll(SoundInit.CAN_CLOSE);
 				
 				MinecraftForge.EVENT_BUS.register(new SoundRegisterListener());
 			}

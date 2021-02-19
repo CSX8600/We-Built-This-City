@@ -3,6 +3,9 @@ itemGroup.wbtc_tab=[We Built This City] - Floor Blocks
 itemGroup.wbtc_tab_ceiling=[We Built This City] - Ceiling Panels
 itemGroup.wbtc_tab_trophy=[We Built This City] - Trophies
 
+//Containers
+container.rubbish_bin:Wheelie Bin
+
 //Items
 item.wood_sod.name=Wooden Sod
 item.stone_sod.name=Stone Sod
@@ -18,6 +21,7 @@ item.aluminum_dust.name=Aluminum Grit
 //Misc Blocks
 tile.aluminum_block.name=Block of Aluminum
 tile.wbtc_aluminum_ore.name=Aluminum Ore
+tile.rubbish_bin.name=Wheelie Bin
 
 //Sign stand
 tile.sign_stand.name=Portable Road Sign Stand

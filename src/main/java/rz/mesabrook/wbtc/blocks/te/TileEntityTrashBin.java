@@ -13,6 +13,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import rz.mesabrook.wbtc.blocks.container.ContainerTrashBin;
+import rz.mesabrook.wbtc.init.ModBlocks;
+import rz.mesabrook.wbtc.init.SoundInit;
 import rz.mesabrook.wbtc.util.Reference;
 
 public class TileEntityTrashBin extends TileEntityLockableLoot implements ITickable
@@ -30,7 +32,7 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 	@Override
 	public int getInventoryStackLimit() 
 	{
-		return 64;
+		return 7;
 	}
 	
 	@Override
@@ -47,7 +49,7 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 	@Override
 	public String getName()
 	{
-		return this.hasCustomName() ? this.customName : "container.trash_bin_wbtc";
+		return "Trash";
 	}
 	
 	@Override
@@ -116,7 +118,7 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
         {
             double d1 = (double)pos.getX() + 0.5D;
             double d2 = (double)pos.getZ() + 0.5D;
-            this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+            this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
         }
 
         if (this.numPlayersUsing == 0 && this.lidAngle > 0.0F || this.numPlayersUsing > 0 && this.lidAngle < 1.0F)
@@ -143,7 +145,7 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
             {
                 double d3 = (double)pos.getX() + 0.5D;
                 double d0 = (double)pos.getZ() + 0.5D;
-                this.world.playSound((EntityPlayer)null, d3, (double)pos.getY() + 0.5D, d0, SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+                this.world.playSound((EntityPlayer)null, d3, (double)pos.getY() + 0.5D, d0, SoundInit.CAN_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
             }
 
             if (this.lidAngle < 0.0F)

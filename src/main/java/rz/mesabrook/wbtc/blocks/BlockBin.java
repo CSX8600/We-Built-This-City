@@ -2,7 +2,10 @@ package rz.mesabrook.wbtc.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,12 +28,15 @@ import rz.mesabrook.wbtc.util.Reference;
 
 public class BlockBin extends BlockContainer implements IHasModel
 {
+	public static final PropertyDirection FACING = BlockHorizontal.FACING;
+	
 	public BlockBin(String name)
 	{
 		super(Material.IRON);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.WBTC_TAB);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
@@ -72,7 +78,7 @@ public class BlockBin extends BlockContainer implements IHasModel
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state)
 	{
-		return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+		return EnumBlockRenderType.MODEL;
 	}
 	
 	@Override
@@ -98,6 +104,67 @@ public class BlockBin extends BlockContainer implements IHasModel
 	{
 		return false;
 	}
+	
+	@Override
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+    {
+        this.setDefaultFacing(worldIn, pos, state);
+    }
+
+    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!worldIn.isRemote)
+        {
+            IBlockState iblockstate = worldIn.getBlockState(pos.north());
+            IBlockState iblockstate1 = worldIn.getBlockState(pos.south());
+            IBlockState iblockstate2 = worldIn.getBlockState(pos.west());
+            IBlockState iblockstate3 = worldIn.getBlockState(pos.east());
+            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
+
+            if (enumfacing == EnumFacing.NORTH && iblockstate.isFullBlock() && !iblockstate1.isFullBlock())
+            {
+                enumfacing = EnumFacing.SOUTH;
+            }
+            else if (enumfacing == EnumFacing.SOUTH && iblockstate1.isFullBlock() && !iblockstate.isFullBlock())
+            {
+                enumfacing = EnumFacing.NORTH;
+            }
+            else if (enumfacing == EnumFacing.WEST && iblockstate2.isFullBlock() && !iblockstate3.isFullBlock())
+            {
+                enumfacing = EnumFacing.EAST;
+            }
+            else if (enumfacing == EnumFacing.EAST && iblockstate3.isFullBlock() && !iblockstate2.isFullBlock())
+            {
+                enumfacing = EnumFacing.WEST;
+            }
+
+            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
+        }
+    }
+    
+    @Override
+    public IBlockState getStateFromMeta(int meta)
+    {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state)
+    {
+        return state.getValue(FACING).getHorizontalIndex();
+    }
+    
+    @Override
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, FACING);
+    }
+	
+    @Override
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
 	
 	@Override
 	public void registerModels()

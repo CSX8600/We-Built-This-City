@@ -8,15 +8,15 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import rz.mesabrook.wbtc.Main;
+import rz.mesabrook.wbtc.blocks.BlockBin;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
 import rz.mesabrook.wbtc.blocks.BlockStatue;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
 import rz.mesabrook.wbtc.blocks.MiscBlock;
-import rz.mesabrook.wbtc.blocks.SignStand;
 import rz.mesabrook.wbtc.blocks.Pillar;
 import rz.mesabrook.wbtc.blocks.PillarBase;
+import rz.mesabrook.wbtc.blocks.SignStand;
 import rz.mesabrook.wbtc.blocks.food.FoodBlock;
 
 public class ModBlocks 
@@ -159,4 +159,7 @@ public class ModBlocks
 	public static final Block STATUE_MD = new BlockStatue("statue_md", MapColor.GRAY);
 	public static final Block STATUE_LW = new BlockStatue("statue_lw", MapColor.GRAY);
 	public static final Block STATUE_SVV = new BlockStatue("statue_svv", MapColor.GRAY);
+	
+	// Trash Can
+	public static final Block TRASH_BIN = new BlockBin("rubbish_bin");
 }

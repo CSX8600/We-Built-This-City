@@ -10,7 +10,5 @@ public class Reference
 	public static final String CLIENT = "rz.mesabrook.wbtc.proxy.ClientProxy";
 	public static final String SERVER = "rz.mesabrook.wbtc.proxy.CommonProxy";
 	
-	// Unused for now. Ignore this. Seriously, ignore this line.
-	// This line is a part of my greatest shame. Don't look at it! Please! :(
 	public static final int GUI_TRASHBIN = 1;
 }

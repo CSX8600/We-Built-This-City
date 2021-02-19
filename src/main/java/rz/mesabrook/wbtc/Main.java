@@ -59,6 +59,7 @@ public class Main
     public void init(FMLInitializationEvent event)
     {
         logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
+        RegistryHandler.initRegistries();
     }
     
     @EventHandler

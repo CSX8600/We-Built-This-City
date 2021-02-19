@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import rz.mesabrook.wbtc.Main;
@@ -49,6 +50,7 @@ public class RegistryHandler
 	public static void onBlockRegister(RegistryEvent.Register<Block> event)
 	{
 		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
+		FuckingTileEntityHandler.registerTileEntites();
 	}
 	
 	@SubscribeEvent
@@ -92,6 +94,11 @@ public class RegistryHandler
 		{
 			Main.logger.info("Thank you for using JABCM!");
 		}
+	}
+	
+	public static void initRegistries()
+	{
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)

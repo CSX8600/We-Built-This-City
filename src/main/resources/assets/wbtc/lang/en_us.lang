@@ -1,7 +1,8 @@
 //Creative Tabs
-itemGroup.wbtc_tab=[We Built This City] - Floor Blocks
-itemGroup.wbtc_tab_ceiling=[We Built This City] - Ceiling Panels
-itemGroup.wbtc_tab_trophy=[We Built This City] - Trophies
+itemGroup.wbtc_tab=[WBTC] - Floor Blocks
+itemGroup.wbtc_tab_ceiling=[WBTC] - Ceiling Panels
+itemGroup.wbtc_tab_trophy=[WBTC] - Trophies
+itemGroup.wbtc_tab_household=[WBTC] - Household Blocks
 
 //Containers
 container.rubbish_bin:Wheelie Bin

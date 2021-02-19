@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "yxy",
+        "xyx",
+        "yxy"
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "minecraft:slime_ball"
+        },
+		"y":
+		{
+			"item": "minecraft:sand"
+		}
+    },
+    "result":
+    {
+        "item": "wbtc:raw_plastic",
+        "count": 9
+    }
+}

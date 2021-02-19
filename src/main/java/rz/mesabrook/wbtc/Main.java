@@ -1,10 +1,8 @@
 package rz.mesabrook.wbtc;
 
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -13,19 +11,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-import rz.mesabrook.wbtc.init.ModBlocks;
-import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.proxy.CommonProxy;
+import rz.mesabrook.wbtc.tab.WBTCHouseholdTab;
 import rz.mesabrook.wbtc.tab.WBTCTab;
 import rz.mesabrook.wbtc.tab.WBTCTabCeiling;
 import rz.mesabrook.wbtc.tab.WBTCTrophyTab;
 import rz.mesabrook.wbtc.util.Reference;
-import rz.mesabrook.wbtc.util.TooltipRandomizer;
 import rz.mesabrook.wbtc.util.handlers.RegistryHandler;
-
-import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 public class Main
@@ -45,6 +37,7 @@ public class Main
     public static final CreativeTabs WBTC_TAB = new WBTCTab("wbtc_tab");
     public static final CreativeTabs WBTC_TAB_CEILING = new WBTCTabCeiling("wbtc_tab_ceiling");
     public static final CreativeTabs WBTC_TAB_TROPHY = new WBTCTrophyTab("wbtc_tab_trophy");
+    public static final CreativeTabs WBTC_TAB_HOUSEHOLD = new WBTCHouseholdTab("wbtc_tab_household");
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

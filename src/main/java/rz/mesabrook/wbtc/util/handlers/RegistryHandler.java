@@ -24,6 +24,7 @@ import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
 import rz.mesabrook.wbtc.util.Reference;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
+import rz.mesabrook.wbtc.util.recipe.SmeltingRecipes;
 import rz.mesabrook.wbtc.world.generation.WorldGenWBTCOres;
 
 @EventBusSubscriber
@@ -115,8 +116,7 @@ public class RegistryHandler
 		Main.logger.info("Scanning for plastics..." + rawPlastics + plastics);
     	TooltipRandomizer.ChosenTooltip();
 		
-		GameRegistry.addSmelting(ModBlocks.ALUMINUM_ORE, new ItemStack(ModItems.ALUMINUM_INGOT), 69);
-		Main.logger.info("Aluminum Ore Smelting Recipe Registered.");
+    	SmeltingRecipes.registerSmeltingRecipes();
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)

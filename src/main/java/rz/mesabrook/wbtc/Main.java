@@ -50,34 +50,19 @@ public class Main
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
-        IE_LOADED = Loader.isModLoaded("immersiveengineering");
-        JABCM_LOADED = Loader.isModLoaded("jabcm");
         RegistryHandler.preInitRegistries(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
         RegistryHandler.initRegistries();
     }
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-    	NonNullList<ItemStack> ironStick = OreDictionary.getOres("stickIron");
-    	NonNullList<ItemStack> aluminumStick = OreDictionary.getOres("stickAluminum");
-    	NonNullList<ItemStack> aluminumIngot = OreDictionary.getOres("ingotAluminum");
-    	NonNullList<ItemStack> aluminumNug = OreDictionary.getOres("nuggetAluminum");
-    	NonNullList<ItemStack> aluminumBlock = OreDictionary.getOres("blockAluminum");
-    	NonNullList<ItemStack> aluminumOre = OreDictionary.getOres("oreAluminum");
-    	NonNullList<ItemStack> aluminumDust = OreDictionary.getOres("dustAluminum");
-    	
-    	logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre + aluminumDust);
-		TooltipRandomizer.ChosenTooltip();
-		
-		GameRegistry.addSmelting(ModBlocks.ALUMINUM_ORE, new ItemStack(ModItems.ALUMINUM_INGOT), 69);
-		Main.logger.info("Aluminum Ore Smelting Recipe Registered.");
+    	RegistryHandler.postInitRegistries(event);
     }
     
 	@EventHandler

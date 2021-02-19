@@ -5,9 +5,12 @@ import org.apache.logging.log4j.Logger;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -19,6 +22,7 @@ import rz.mesabrook.wbtc.cmds.CommandTeleportDimension;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
 import rz.mesabrook.wbtc.util.IHasModel;
+import rz.mesabrook.wbtc.util.Reference;
 import rz.mesabrook.wbtc.util.TooltipRandomizer;
 import rz.mesabrook.wbtc.world.generation.WorldGenWBTCOres;
 
@@ -29,21 +33,7 @@ public class RegistryHandler
 	public static void onItemRegister(RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
-		OreDictionary.registerOre("stickIron", ModItems.IRON_ROD);
-		OreDictionary.registerOre("stickAluminum", ModItems.ALUMINUM_ROD);
-		OreDictionary.registerOre("ingotAluminum", ModItems.ALUMINUM_INGOT);
-		OreDictionary.registerOre("nuggetAluminum", ModItems.ALUMINUM_NUGGET);
-		OreDictionary.registerOre("blockAluminum", ModBlocks.CUBE_ALUMINUM);
-		OreDictionary.registerOre("oreAluminum", ModBlocks.ALUMINUM_ORE);
-		OreDictionary.registerOre("dustAluminum", ModItems.ALUMINUM_DUST);
-		
-		Main.logger.info(ModItems.IRON_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickIron");
-		Main.logger.info(ModItems.ALUMINUM_ROD.getUnlocalizedName() + " has been added to the Ore Dictionary under stickAluminum");
-		Main.logger.info(ModItems.ALUMINUM_INGOT.getUnlocalizedName() + " has been added to the Ore Dictionary under ingotAluminum");
-		Main.logger.info(ModItems.ALUMINUM_NUGGET.getUnlocalizedName() + " has been added to the Ore Dictionary under nuggetAluminum");
-		Main.logger.info(ModBlocks.CUBE_ALUMINUM.getUnlocalizedName() + " has been added to the Ore Dictionary under blockAluminum");
-		Main.logger.info(ModBlocks.ALUMINUM_ORE.getUnlocalizedName() + " has been added to the Ore Dictionary under oreAluminum");
-		Main.logger.info(ModItems.ALUMINUM_DUST.getUnlocalizedName() + " has been added to the Ore Dictionary under dustAluminum");
+		OreDictRegistry.addToOD();
 	}
 	
 	@SubscribeEvent
@@ -75,6 +65,10 @@ public class RegistryHandler
 	
 	public static void preInitRegistries(FMLPreInitializationEvent event)
 	{
+		Main.logger.info("[WBTC] Firing Pre-Initialization Event");
+        Main.IE_LOADED = Loader.isModLoaded("immersiveengineering");
+        Main.JABCM_LOADED = Loader.isModLoaded("jabcm");
+		
 		if(!Main.IE_LOADED)
 		{
 			Main.logger.info("Immersive Engineering NOT detected. WBTC Aluminum Ore gen enabled.");
@@ -98,11 +92,36 @@ public class RegistryHandler
 	
 	public static void initRegistries()
 	{
+		Main.logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
+		Main.logger.info("[WBTC] Firing Initialization Event");
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
+	}
+	
+	public static void postInitRegistries(FMLPostInitializationEvent event)
+	{
+		Main.logger.info("[WBTC] Firing Post Initialization Event");
+		
+    	NonNullList<ItemStack> ironStick = OreDictionary.getOres("stickIron");
+    	NonNullList<ItemStack> aluminumStick = OreDictionary.getOres("stickAluminum");
+    	NonNullList<ItemStack> aluminumIngot = OreDictionary.getOres("ingotAluminum");
+    	NonNullList<ItemStack> aluminumNug = OreDictionary.getOres("nuggetAluminum");
+    	NonNullList<ItemStack> aluminumBlock = OreDictionary.getOres("blockAluminum");
+    	NonNullList<ItemStack> aluminumOre = OreDictionary.getOres("oreAluminum");
+    	NonNullList<ItemStack> aluminumDust = OreDictionary.getOres("dustAluminum");
+    	NonNullList<ItemStack> rawPlastics = OreDictionary.getOres("itemRawPlastic");
+    	NonNullList<ItemStack> plastics = OreDictionary.getOres("itemPlastic");
+    	
+    	Main.logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre + aluminumDust);
+		Main.logger.info("Scanning for plastics..." + rawPlastics + plastics);
+    	TooltipRandomizer.ChosenTooltip();
+		
+		GameRegistry.addSmelting(ModBlocks.ALUMINUM_ORE, new ItemStack(ModItems.ALUMINUM_INGOT), 69);
+		Main.logger.info("Aluminum Ore Smelting Recipe Registered.");
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
 	{
+		Main.logger.info("[WBTC] Firing Server Starting Event");
 		event.registerServerCommand(new CommandTeleportDimension());
 	}
 }

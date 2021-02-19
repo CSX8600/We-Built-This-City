@@ -36,4 +36,44 @@ public class ModItems
 	public static final Item ALUMINUM_INGOT = new MiscItem("ingot_aluminum", CreativeTabs.MATERIALS, 64);
 	public static final Item ALUMINUM_NUGGET = new MiscItem("nugget_aluminum", CreativeTabs.MATERIALS, 64);
 	public static final Item ALUMINUM_DUST = new MiscItem("aluminum_dust", CreativeTabs.MATERIALS, 64);
+	
+	// Raw Plastic
+	public static final Item RAW_PLASTIC = new MiscItem("raw_plastic", CreativeTabs.MATERIALS, 64);
+	
+	// Colored Raw Plastic
+	public static final Item RAW_PLASTIC_WHITE = new MiscItem("raw_white_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_ORANGE = new MiscItem("raw_orange_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_MAGENTA = new MiscItem("raw_magenta_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_LBLUE = new MiscItem("raw_lblue_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_YELLOW = new MiscItem("raw_yellow_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_LIME = new MiscItem("raw_lime_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_PINK = new MiscItem("raw_pink_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_GRAY = new MiscItem("raw_gray_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_SILVER = new MiscItem("raw_silver_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_CYAN = new MiscItem("raw_cyan_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_PURPLE = new MiscItem("raw_purple_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_BLUE = new MiscItem("raw_blue_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_BROWN = new MiscItem("raw_brown_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_GREEN = new MiscItem("raw_green_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_RED = new MiscItem("raw_red_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item RAW_PLASTIC_BLACK = new MiscItem("raw_black_plastic", CreativeTabs.MATERIALS, 64);
+	
+	// Finalized Colored Plastic Ingots
+	public static final Item PLASTIC_WHITE = new MiscItem("white_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_ORANGE = new MiscItem("orange_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_MAGENTA = new MiscItem("magenta_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_LBLUE = new MiscItem("lblue_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_YELLOW = new MiscItem("yellow_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_LIME = new MiscItem("lime_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_PINK = new MiscItem("pink_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_GRAY = new MiscItem("gray_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_SILVER = new MiscItem("silver_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_CYAN = new MiscItem("cyan_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_PURPLE = new MiscItem("purple_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_BLUE = new MiscItem("blue_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_BROWN = new MiscItem("brown_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_GREEN = new MiscItem("green_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_RED = new MiscItem("red_plastic", CreativeTabs.MATERIALS, 64);
+	public static final Item PLASTIC_BLACK = new MiscItem("black_plastic", CreativeTabs.MATERIALS, 64);
+	
 }

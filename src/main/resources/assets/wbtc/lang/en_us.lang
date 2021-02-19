@@ -18,6 +18,42 @@ item.ingot_aluminum.name=Aluminum Ingot
 item.nugget_aluminum.name=Aluminum Nugget
 item.aluminum_dust.name=Aluminum Grit
 
+// Plastic
+item.raw_plastic.name=Raw Plastic
+item.raw_white_plastic.name=Raw White Plastic
+item.raw_orange_plastic.name=Raw Orange Plastic
+item.raw_magenta_plastic.name=Raw Magenta Plastic
+item.raw_lblue_plastic.name=Raw Light Blue Plastic
+item.raw_yellow_plastic.name=Raw Yellow Plastic
+item.raw_lime_plastic.name=Raw Lime Plastic
+item.raw_pink_plastic.name=Raw Pink Plastic
+item.raw_gray_plastic.name=Raw Gray Plastic
+item.raw_silver_plastic.name=Raw Light Gray Plastic
+item.raw_cyan_plastic.name=Raw Cyan Plastic
+item.raw_purple_plastic.name=Raw Purple Plastic
+item.raw_blue_plastic.name=Raw Blue Plastic
+item.raw_brown_plastic.name=Raw Brown Plastic
+item.raw_green_plastic.name=Raw Green Plastic
+item.raw_red_plastic.name=Raw Red Plastic
+item.raw_black_plastic.name=Raw Black Plastic
+
+item.white_plastic.name=White Plastic
+item.orange_plastic.name=Orange Plastic
+item.magenta_plastic.name=Magenta Plastic
+item.lblue_plastic.name=Light Blue Plastic
+item.yellow_plastic.name=Yellow Plastic
+item.lime_plastic.name=Lime Plastic
+item.pink_plastic.name=Pink Plastic
+item.gray_plastic.name=Gray Plastic
+item.silver_plastic.name=Light Gray Plastic
+item.cyan_plastic.name=Cyan Plastic
+item.purple_plastic.name=Purple Plastic
+item.blue_plastic.name=Blue Plastic
+item.brown_plastic.name=Brown Plastic
+item.green_plastic.name=Green Plastic
+item.red_plastic.name=Red Plastic
+item.black_plastic.name=Black Plastic
+
 //Misc Blocks
 tile.aluminum_block.name=Block of Aluminum
 tile.wbtc_aluminum_ore.name=Aluminum Ore

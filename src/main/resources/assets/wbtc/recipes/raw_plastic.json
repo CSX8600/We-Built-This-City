@@ -14,7 +14,8 @@
         },
 		"y":
 		{
-			"item": "minecraft:sand"
+			"item": "minecraft:sand",
+			"data": 0
 		}
     },
     "result":

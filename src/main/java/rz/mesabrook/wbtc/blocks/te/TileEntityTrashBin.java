@@ -116,9 +116,9 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 
         if (this.numPlayersUsing > 0 && this.lidAngle == 0.0F)
         {
-            double d1 = (double)pos.getX() + 0.5D;
-            double d2 = (double)pos.getZ() + 0.5D;
-            this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+            //double d1 = (double)pos.getX() + 0.5D;
+            //double d2 = (double)pos.getZ() + 0.5D;
+            //this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.AMBIENT, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
         }
 
         if (this.numPlayersUsing == 0 && this.lidAngle > 0.0F || this.numPlayersUsing > 0 && this.lidAngle < 1.0F)
@@ -143,9 +143,9 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 
             if (this.lidAngle < 0.5F && f2 >= 0.5F)
             {
-                double d3 = (double)pos.getX() + 0.5D;
-                double d0 = (double)pos.getZ() + 0.5D;
-                this.world.playSound((EntityPlayer)null, d3, (double)pos.getY() + 0.5D, d0, SoundInit.CAN_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+                //double d3 = (double)pos.getX() + 0.5D;
+                //double d0 = (double)pos.getZ() + 0.5D;
+                //this.world.playSound((EntityPlayer)null, d3, (double)pos.getY() + 0.5D, d0, SoundInit.CAN_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
             }
 
             if (this.lidAngle < 0.0F)
@@ -161,6 +161,10 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 		++this.numPlayersUsing;
 		this.world.addBlockEvent(pos, this.getBlockType(), 1, this.numPlayersUsing);
 		this.world.notifyNeighborsOfStateChange(pos, this.getBlockType(), false);
+		
+		double d1 = (double)pos.getX() + 0.5D;
+        double d2 = (double)pos.getZ() + 0.5D;
+        this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.AMBIENT, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
 	}
 	
 	@Override
@@ -169,5 +173,9 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 		--this.numPlayersUsing;
 		this.world.addBlockEvent(pos, this.getBlockType(), 1, this.numPlayersUsing);
 		this.world.notifyNeighborsOfStateChange(pos, this.getBlockType(), false);
+		
+        double d3 = (double)pos.getX() + 0.5D;
+        double d0 = (double)pos.getZ() + 0.5D;
+        this.world.playSound((EntityPlayer)null, d3, (double)pos.getY() + 0.5D, d0, SoundInit.CAN_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
 	}	
 }

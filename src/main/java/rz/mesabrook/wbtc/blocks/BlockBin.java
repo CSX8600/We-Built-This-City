@@ -17,12 +17,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.te.TileEntityTrashBin;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
+import rz.mesabrook.wbtc.init.SoundInit;
 import rz.mesabrook.wbtc.util.IHasModel;
 import rz.mesabrook.wbtc.util.Reference;
 
@@ -47,6 +49,7 @@ public class BlockBin extends BlockContainer implements IHasModel
 	{
 		if(!worldIn.isRemote)
 		{
+			worldIn.playSound(playerIn, pos, SoundInit.CAN_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			playerIn.openGui(Main.instance, Reference.GUI_TRASHBIN, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		

@@ -26,7 +26,7 @@ import rz.mesabrook.wbtc.util.TooltipRandomizer;
 
 public class MiscBlock extends Block implements IHasModel
 {
-	public MiscBlock(String name, SoundType sound, CreativeTabs tab)
+	public MiscBlock(String name, SoundType sound, CreativeTabs tab, float lightLevel)
 	{
 		super(Material.ROCK);
 		setUnlocalizedName(name);
@@ -36,6 +36,7 @@ public class MiscBlock extends Block implements IHasModel
 		setResistance(8.0F);
 		setCreativeTab(tab);
 		setHarvestLevel("pickaxe", 0);
+		setLightLevel(lightLevel);
 		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
@@ -53,6 +54,10 @@ public class MiscBlock extends Block implements IHasModel
 		else if(this.getUnlocalizedName().contains("aluminum_block"))
 		{
 			tooltip.add(TextFormatting.AQUA + "Can be used as a Beacon base");
+		}
+		else if(this.getUnlocalizedName().contains("synthetic_turf"))
+		{
+			tooltip.add(TextFormatting.GOLD + "It glows in the dark and is not approved by the NFL.");
 		}
 		
 		super.addInformation(stack, world, tooltip, flag);

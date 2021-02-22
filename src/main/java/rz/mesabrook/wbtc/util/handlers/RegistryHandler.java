@@ -66,9 +66,18 @@ public class RegistryHandler
 	
 	public static void preInitRegistries(FMLPreInitializationEvent event)
 	{
-		Main.logger.info("[WBTC] Firing Pre-Initialization Event");
+		Main.logger.info("[We Built This City] Version " + Reference.VERSION + " loading...");
+		Main.logger.info("[WBTC] You wanted another version? Well here you go!");
+		Main.logger.info("[WBTC] Pre-Initialization");
         Main.IE_LOADED = Loader.isModLoaded("immersiveengineering");
         Main.JABCM_LOADED = Loader.isModLoaded("jabcm");
+        Main.FURENIKUS_CITIES = Loader.isModLoaded("furenikuscities");
+        
+        
+        if(Main.FURENIKUS_CITIES)
+        {
+        	Main.logger.warn("[WBTC] Fureniku's Cities detected. There may be some overlap when it comes to blocks since both mods are meant for a similar purpose. We recommend using either WBTC or FC separately to avoid any potential conflicts.");
+        }
 		
 		if(!Main.IE_LOADED)
 		{
@@ -93,14 +102,13 @@ public class RegistryHandler
 	
 	public static void initRegistries()
 	{
-		Main.logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
 		Main.logger.info("[WBTC] Firing Initialization Event");
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 	
 	public static void postInitRegistries(FMLPostInitializationEvent event)
 	{
-		Main.logger.info("[WBTC] Firing Post Initialization Event");
+		Main.logger.info("[WBTC] Post Initialization");
 		
     	NonNullList<ItemStack> ironStick = OreDictionary.getOres("stickIron");
     	NonNullList<ItemStack> aluminumStick = OreDictionary.getOres("stickAluminum");
@@ -112,16 +120,18 @@ public class RegistryHandler
     	NonNullList<ItemStack> rawPlastics = OreDictionary.getOres("itemRawPlastic");
     	NonNullList<ItemStack> plastics = OreDictionary.getOres("itemPlastic");
     	
-    	Main.logger.info("Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre + aluminumDust);
-		Main.logger.info("Scanning for plastics..." + rawPlastics + plastics);
+    	Main.logger.info("[WBTC] Checking to ensure our items are in the OD " + ironStick + aluminumStick + aluminumIngot + aluminumNug + aluminumBlock + aluminumOre + aluminumDust);
+		Main.logger.info("[WBTC] Scanning for plastics..." + rawPlastics + plastics);
     	TooltipRandomizer.ChosenTooltip();
 		
     	SmeltingRecipes.registerSmeltingRecipes();
+    	
+    	Main.logger.info("[We Built This City] Version " + Reference.VERSION + " loaded.");
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
 	{
-		Main.logger.info("[WBTC] Firing Server Starting Event");
+		Main.logger.info("[WBTC] Server Starting Event");
 		event.registerServerCommand(new CommandTeleportDimension());
 	}
 }

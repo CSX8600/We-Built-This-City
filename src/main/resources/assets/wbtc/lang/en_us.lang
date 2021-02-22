@@ -59,6 +59,7 @@ item.black_plastic.name=Black Plastic
 tile.aluminum_block.name=Block of Aluminum
 tile.wbtc_aluminum_ore.name=Aluminum Ore
 tile.rubbish_bin.name=Wheelie Bin
+tile.synthetic_turf.name=Synthetic Turf
 
 //Sign stand
 tile.sign_stand.name=Portable Road Sign Stand

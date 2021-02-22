@@ -109,6 +109,7 @@ public class ModBlocks
 	// Misc Blocks
 	public static final Block WHITE_STONE = new MiscBlock("white_stone", SoundType.STONE, CreativeTabs.BUILDING_BLOCKS);
 	public static final Block EPIC_SLAB = new MiscBlock("epic_slab", SoundType.STONE, CreativeTabs.BUILDING_BLOCKS);
+	public static final Block ASTRO_TURF = new MiscBlock("synthetic_turf", SoundType.PLANT, Main.WBTC_TAB);
 	
 	// Commercial Kitchen Floor Blocks
 	public static final Block FLOOR_KITCHEN_1 = new MiscBlock("floor_kitchen_1", SoundType.STONE, Main.WBTC_TAB);

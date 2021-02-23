@@ -16,8 +16,10 @@ import rz.mesabrook.wbtc.blocks.ChromaScreen;
 import rz.mesabrook.wbtc.blocks.MiscBlock;
 import rz.mesabrook.wbtc.blocks.Pillar;
 import rz.mesabrook.wbtc.blocks.PillarBase;
+import rz.mesabrook.wbtc.blocks.SignBlock;
 import rz.mesabrook.wbtc.blocks.SignStand;
 import rz.mesabrook.wbtc.blocks.food.FoodBlock;
+import rz.mesabrook.wbtc.util.ModUtils;
 
 public class ModBlocks 
 {
@@ -150,6 +152,9 @@ public class ModBlocks
 	
 	// Sign stand
 	public static final Block SIGN_STAND = new SignStand("sign_stand", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, Main.WBTC_TAB);
+	
+	// Signs
+	public static final Block EXIT_SIGN = new SignBlock("exit_sign", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, ModUtils.getPixelatedAABB(3,7,0, 13,13,0.5), 0.4F, Main.WBTC_TAB_HOUSEHOLD);
 	
 	// Trophies
 	public static final Block STATUE_OWO = new BlockStatue("statue_owo", MapColor.BLUE);

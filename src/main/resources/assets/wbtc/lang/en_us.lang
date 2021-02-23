@@ -7,6 +7,9 @@ itemGroup.wbtc_tab_household=[WBTC] - Household Blocks
 //Containers
 container.rubbish_bin:Wheelie Bin
 
+//Signs
+tile.exit_sign.name=Exit Sign
+
 //Items
 item.wood_sod.name=Wooden Sod
 item.stone_sod.name=Stone Sod

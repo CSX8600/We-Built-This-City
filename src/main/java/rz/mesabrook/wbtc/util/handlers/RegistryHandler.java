@@ -68,6 +68,7 @@ public class RegistryHandler
 	{
 		Main.logger.info("[We Built This City] Version " + Reference.VERSION + " loading...");
 		Main.logger.info("[WBTC] You wanted another version? Well here you go!");
+		Main.logger.info("[WBTC] For the Empire.");
 		Main.logger.info("[WBTC] Pre-Initialization");
         Main.IE_LOADED = Loader.isModLoaded("immersiveengineering");
         Main.JABCM_LOADED = Loader.isModLoaded("jabcm");
@@ -92,7 +93,7 @@ public class RegistryHandler
 		if(!Main.JABCM_LOADED)
 		{
 			Main.logger.info("WBTC goes great with the Just A Basic Concrete Mod!");
-			Main.logger.info("Download it today! https://bit.ly/3jHSloq");
+			Main.logger.info("Download it today! https://bit.ly/2NNXJL4");
 		}
 		else
 		{
@@ -102,7 +103,7 @@ public class RegistryHandler
 	
 	public static void initRegistries()
 	{
-		Main.logger.info("[WBTC] Firing Initialization Event");
+		Main.logger.info("[WBTC] Initialization");
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 	
@@ -131,7 +132,7 @@ public class RegistryHandler
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
 	{
-		Main.logger.info("[WBTC] Server Starting Event");
+		Main.logger.info("[WBTC] Registering Command");
 		event.registerServerCommand(new CommandTeleportDimension());
 	}
 }

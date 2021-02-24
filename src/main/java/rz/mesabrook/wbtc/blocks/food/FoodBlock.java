@@ -211,29 +211,39 @@ public class FoodBlock extends Block implements IHasModel
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
-		if(this.getUnlocalizedName().contains("cube_pork"))
+		try
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_PIG_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			if(this.getUnlocalizedName().contains("cube_pork"))
+			{
+				world.playSound(player, pos, SoundEvents.ENTITY_PIG_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			}
+			else if(this.getUnlocalizedName().contains("cube_beef"))
+			{
+				world.playSound(player, pos, SoundEvents.ENTITY_COW_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			}
+			else if(this.getUnlocalizedName().contains("cube_chicken"))
+			{
+				world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			}
+			else if(this.getUnlocalizedName().contains("cube_mutton"))
+			{
+				world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			}
+			else if(this.getUnlocalizedName().contains("cube_rabbit"))
+			{
+				world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
+			}
+			else if(this.getUnlocalizedName().contains("cube_apples"))
+			{
+				world.playSound(player, pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			
+			TooltipRandomizer.ChosenTooltip();
+			return true;
 		}
-		else if(this.getUnlocalizedName().contains("cube_beef"))
+		catch(Exception e)
 		{
-			world.playSound(player, pos, SoundEvents.ENTITY_COW_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
-		}
-		else if(this.getUnlocalizedName().contains("cube_chicken"))
-		{
-			world.playSound(player, pos, SoundEvents.ENTITY_CHICKEN_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
-		}
-		else if(this.getUnlocalizedName().contains("cube_mutton"))
-		{
-			world.playSound(player, pos, SoundEvents.ENTITY_SHEEP_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
-		}
-		else if(this.getUnlocalizedName().contains("cube_rabbit"))
-		{
-			world.playSound(player, pos, SoundEvents.ENTITY_RABBIT_HURT, SoundCategory.BLOCKS, 1.0F, tierPitch);
-		}
-		else if(this.getUnlocalizedName().contains("cube_apples"))
-		{
-			world.playSound(player, pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			
 		}
 		
 		TooltipRandomizer.ChosenTooltip();

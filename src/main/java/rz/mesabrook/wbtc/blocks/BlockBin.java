@@ -47,12 +47,8 @@ public class BlockBin extends BlockContainer implements IHasModel
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
-		if(!worldIn.isRemote)
-		{
-			worldIn.playSound(playerIn, pos, SoundInit.CAN_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-			playerIn.openGui(Main.instance, Reference.GUI_TRASHBIN, worldIn, pos.getX(), pos.getY(), pos.getZ());
-		}
-		
+		worldIn.playSound(playerIn, pos, SoundInit.CAN_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+		playerIn.openGui(Main.instance, Reference.GUI_TRASHBIN, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		return true;
 	}
 	

@@ -158,13 +158,16 @@ public class TileEntityTrashBin extends TileEntityLockableLoot implements ITicka
 	@Override
 	public void openInventory(EntityPlayer player)
 	{
-		++this.numPlayersUsing;
-		this.world.addBlockEvent(pos, this.getBlockType(), 1, this.numPlayersUsing);
-		this.world.notifyNeighborsOfStateChange(pos, this.getBlockType(), false);
-		
-		double d1 = (double)pos.getX() + 0.5D;
-        double d2 = (double)pos.getZ() + 0.5D;
-        this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.AMBIENT, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+		if(!player.isSpectator())
+		{
+			++this.numPlayersUsing;
+			this.world.addBlockEvent(pos, this.getBlockType(), 1, this.numPlayersUsing);
+			this.world.notifyNeighborsOfStateChange(pos, this.getBlockType(), false);
+			
+			double d1 = (double)pos.getX() + 0.5D;
+	        double d2 = (double)pos.getZ() + 0.5D;
+	        this.world.playSound((EntityPlayer)null, d1, (double)pos.getY() + 0.5D, d2, SoundInit.CAN_OPEN, SoundCategory.AMBIENT, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+		}
 	}
 	
 	@Override

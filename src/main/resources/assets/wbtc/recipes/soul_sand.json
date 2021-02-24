@@ -7,14 +7,16 @@
   ],
   "key": {
 	"y": {
-	  "item": "wbtc:green_plastic"
+	  "item": "minecraft:sand",
+	  "data": 0
 	},
 	"x": {
-	  "item": "minecraft:glowstone_dust"
+	  "item": "minecraft:skull",
+	  "data": 1
 	}
   },
   "result": {
-    "item": "wbtc:synthetic_turf",
-    "count": 6
+    "item": "minecraft:soul_sand",
+    "count": 4
   }
 }

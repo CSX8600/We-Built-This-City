@@ -2,19 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "yyy",
-    "yxy",
+    "zxz",
 	"yyy"
   ],
   "key": {
 	"y": {
-	  "item": "wbtc:green_plastic"
+	  "item": "wbtc:silver_plastic"
 	},
 	"x": {
 	  "item": "minecraft:glowstone_dust"
+	},
+	"z": {
+	  "item": "wbtc:red_plastic"
 	}
   },
   "result": {
-    "item": "wbtc:synthetic_turf",
-    "count": 6
+    "item": "wbtc:exit_sign",
+    "count": 2
   }
 }

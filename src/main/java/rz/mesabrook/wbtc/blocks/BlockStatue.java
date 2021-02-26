@@ -211,6 +211,13 @@ public class BlockStatue extends Block implements IHasModel
 		}
 	}
 	
+	@Override
+    @SideOnly(Side.CLIENT)
+    public boolean hasCustomBreakingProgress(IBlockState state)
+    {
+        return true;
+    }
+	
 	// Play a sound when the player right-clicks on a statue.
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)

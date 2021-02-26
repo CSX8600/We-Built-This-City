@@ -212,6 +212,13 @@ public class BlockPlaque extends Block implements IHasModel
 	}
     
 	@Override
+    @SideOnly(Side.CLIENT)
+    public boolean hasCustomBreakingProgress(IBlockState state)
+    {
+        return true;
+    }
+	
+	@Override
 	public void registerModels()
 	{
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");

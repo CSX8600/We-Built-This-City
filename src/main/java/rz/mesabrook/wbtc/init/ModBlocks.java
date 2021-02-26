@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import rz.mesabrook.wbtc.Main;
 import rz.mesabrook.wbtc.blocks.BlockBin;
 import rz.mesabrook.wbtc.blocks.BlockHandrail;
+import rz.mesabrook.wbtc.blocks.BlockPlaque;
 import rz.mesabrook.wbtc.blocks.BlockStatue;
 import rz.mesabrook.wbtc.blocks.ChromaScreen;
 import rz.mesabrook.wbtc.blocks.MiscBlock;
@@ -165,6 +166,11 @@ public class ModBlocks
 	public static final Block STATUE_MD = new BlockStatue("statue_md", MapColor.GRAY);
 	public static final Block STATUE_LW = new BlockStatue("statue_lw", MapColor.GRAY);
 	public static final Block STATUE_SVV = new BlockStatue("statue_svv", MapColor.GRAY);
+	
+	// Plaques
+	public static final Block PLAQUE_TEST = new BlockPlaque("plaque_test", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
+	public static final Block PLAQUE_DEV = new BlockPlaque("plaque_dev", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
+	public static final Block PLAQUE_SUPPORTER = new BlockPlaque("plaque_supporter", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
 	
 	// Trash Can
 	public static final Block TRASH_BIN = new BlockBin("rubbish_bin");

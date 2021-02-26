@@ -93,6 +93,11 @@ tile.statue_md.name=Trophy for MineDouble - Mesabrook Founders Award
 tile.statue_lw.name=Trophy for lilWeece - Mesabrook Founders Award
 tile.statue_svv.name=Trophy for StarVicVader - Mesabrook Founders Award
 
+//Plaques
+tile.plaque_test.name=Award - Test Plaque
+tile.plaque_dev.name=Developer's Award
+tile.plaque_supporter.name=Supporter Award (WIP)
+
 //Ceiling Tile Block
 tile.panel_ceiling.name=Ceiling Panel
 

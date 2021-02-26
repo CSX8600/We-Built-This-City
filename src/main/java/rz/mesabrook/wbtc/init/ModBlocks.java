@@ -155,7 +155,7 @@ public class ModBlocks
 	public static final Block SIGN_STAND = new SignStand("sign_stand", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, Main.WBTC_TAB);
 	
 	// Signs
-	public static final Block EXIT_SIGN = new SignBlock("exit_sign", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, ModUtils.getPixelatedAABB(3,7,0, 13,13,0.5), 0.4F, Main.WBTC_TAB_HOUSEHOLD);
+	public static final Block EXIT_SIGN = new SignBlock("exit_sign", Material.IRON, SoundType.METAL, 1.0F, 1.0F, "pickaxe", 0, ModUtils.getPixelatedAABB(3,5,0, 13,12,1), 0.4F, Main.WBTC_TAB_HOUSEHOLD);
 	
 	// Trophies
 	public static final Block STATUE_OWO = new BlockStatue("statue_owo", MapColor.BLUE);
@@ -168,9 +168,9 @@ public class ModBlocks
 	public static final Block STATUE_SVV = new BlockStatue("statue_svv", MapColor.GRAY);
 	
 	// Plaques
-	public static final Block PLAQUE_TEST = new BlockPlaque("plaque_test", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
-	public static final Block PLAQUE_DEV = new BlockPlaque("plaque_dev", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
-	public static final Block PLAQUE_SUPPORTER = new BlockPlaque("plaque_supporter", MapColor.GOLD, ModUtils.getPixelatedAABB(2,2,0, 14,14,0.5));
+	public static final Block PLAQUE_TEST = new BlockPlaque("plaque_test", MapColor.GOLD, ModUtils.getPixelatedAABB(3,0,0, 13,12,1.5));
+	public static final Block PLAQUE_DEV = new BlockPlaque("plaque_dev", MapColor.GOLD, ModUtils.getPixelatedAABB(3,0,0, 13,12,1.5));
+	public static final Block PLAQUE_SUPPORTER = new BlockPlaque("plaque_supporter", MapColor.GOLD, ModUtils.getPixelatedAABB(3,0,0, 13,12,1.5));
 	
 	// Trash Can
 	public static final Block TRASH_BIN = new BlockBin("rubbish_bin");

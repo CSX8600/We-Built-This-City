@@ -99,6 +99,8 @@ public class RegistryHandler
 		{
 			Main.logger.info("Thank you for using JABCM!");
 		}
+		
+		PacketHandler.registerMessages();
 	}
 	
 	public static void initRegistries()

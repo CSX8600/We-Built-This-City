@@ -51,6 +51,7 @@ public class Main
     public void init(FMLInitializationEvent event)
     {
         RegistryHandler.initRegistries();
+        proxy.init(event);
     }
     
     @EventHandler

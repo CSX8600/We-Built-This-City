@@ -10,7 +10,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -20,10 +19,12 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -32,8 +33,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import rz.mesabrook.wbtc.Main;
+import rz.mesabrook.wbtc.blocks.te.TileEntityPlaque;
 import rz.mesabrook.wbtc.init.ModBlocks;
 import rz.mesabrook.wbtc.init.ModItems;
+import rz.mesabrook.wbtc.items.misc.PlaqueItemBlock;
 import rz.mesabrook.wbtc.util.IHasModel;
 import rz.mesabrook.wbtc.util.ModUtils;
 
@@ -65,7 +68,7 @@ public class BlockPlaque extends Block implements IHasModel
 		
 		
 		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()).setMaxStackSize(1));
+		ModItems.ITEMS.add(new PlaqueItemBlock(this).setRegistryName(this.getRegistryName()).setMaxStackSize(1));
 	}
 	
 	@Override
@@ -134,43 +137,6 @@ public class BlockPlaque extends Block implements IHasModel
 		return BlockRenderLayer.CUTOUT;
 	}
 	
-	@Override
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-    {
-        this.setDefaultFacing(worldIn, pos, state);
-    }
-
-    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
-    {
-        if (!worldIn.isRemote)
-        {
-            IBlockState iblockstate = worldIn.getBlockState(pos.north());
-            IBlockState iblockstate1 = worldIn.getBlockState(pos.south());
-            IBlockState iblockstate2 = worldIn.getBlockState(pos.west());
-            IBlockState iblockstate3 = worldIn.getBlockState(pos.east());
-            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
-
-            if (enumfacing == EnumFacing.NORTH && iblockstate.isFullBlock() && !iblockstate1.isFullBlock())
-            {
-                enumfacing = EnumFacing.SOUTH;
-            }
-            else if (enumfacing == EnumFacing.SOUTH && iblockstate1.isFullBlock() && !iblockstate.isFullBlock())
-            {
-                enumfacing = EnumFacing.NORTH;
-            }
-            else if (enumfacing == EnumFacing.WEST && iblockstate2.isFullBlock() && !iblockstate3.isFullBlock())
-            {
-                enumfacing = EnumFacing.EAST;
-            }
-            else if (enumfacing == EnumFacing.EAST && iblockstate3.isFullBlock() && !iblockstate2.isFullBlock())
-            {
-                enumfacing = EnumFacing.WEST;
-            }
-
-            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
-        }
-    }
-	
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
@@ -199,14 +165,29 @@ public class BlockPlaque extends Block implements IHasModel
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag)
 	{	
+		String awardedTo = null;
+		NBTTagCompound tag = stack.getTagCompound();
+		if (tag != null && tag.hasKey("awardedTo"))
+		{
+			awardedTo = tag.getString("awardedTo");
+		}
+		
 		if(this.getUnlocalizedName().contains("plaque_test"))
 		{
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "WBTC");
+			if (awardedTo != null)
+			{
+				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded To: " + TextFormatting.YELLOW + awardedTo);
+			}
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Testing this plaque.");
 		}
 		else if(this.getUnlocalizedName().contains("plaque_dev"))
 		{
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded By: " + TextFormatting.BLUE + "Government of Mesabrook");
+			if (awardedTo != null)
+			{
+				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded To: " + TextFormatting.YELLOW + awardedTo);
+			}
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Contributing to the server by developing mods or resource packs.");
 		}
 	}
@@ -222,5 +203,47 @@ public class BlockPlaque extends Block implements IHasModel
 	public void registerModels()
 	{
 		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+	}
+
+	@Override
+	public TileEntity createTileEntity(World world, IBlockState state) {
+		return new TileEntityPlaque(getUnlocalizedName());
+	}
+	
+	@Override
+	public boolean hasTileEntity(IBlockState state) {
+		return true;
+	}
+	
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
+			int fortune) {
+		ItemStack plaqueStack = new ItemStack(this);
+		plaqueStack.setCount(1);
+		
+		TileEntity te = world.getTileEntity(pos);
+		if (te instanceof TileEntityPlaque)
+		{
+			TileEntityPlaque plaqueTileEntity = (TileEntityPlaque)te;
+			NBTTagCompound compound = new NBTTagCompound();
+			compound.setString("awardedTo", plaqueTileEntity.getAwardedTo());
+			plaqueStack.setTagCompound(compound);
+		}
+		
+		drops.add(plaqueStack);
+	}
+	
+	@Override
+	public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player,
+			boolean willHarvest) {
+		if (willHarvest) return true;
+		else return super.removedByPlayer(state, world, pos, player, willHarvest);
+	}
+	
+	@Override
+	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te,
+			ItemStack stack) {
+		super.harvestBlock(worldIn, player, pos, state, te, stack);
+		worldIn.setBlockToAir(pos);
 	}
 }

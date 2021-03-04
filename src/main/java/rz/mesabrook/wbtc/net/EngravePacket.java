@@ -13,18 +13,21 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import rz.mesabrook.wbtc.items.misc.PlaqueItemBlock;
 
 public class EngravePacket implements IMessage {
-	public String awardedTo;
+	public String awardedTo = "";
+	public String awardedFor = "";
 	public EnumHand hand;
 	
 	@Override
 	public void fromBytes(ByteBuf buf) {
 		awardedTo = ByteBufUtils.readUTF8String(buf);
+		awardedFor = ByteBufUtils.readUTF8String(buf);
 		hand = EnumHand.values()[buf.readInt()];
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
 		ByteBufUtils.writeUTF8String(buf, awardedTo);
+		ByteBufUtils.writeUTF8String(buf, awardedFor);
 		buf.writeInt(hand.ordinal());
 	}
 	
@@ -54,6 +57,7 @@ public class EngravePacket implements IMessage {
 			}
 			
 			compound.setString("awardedTo", message.awardedTo);
+			compound.setString("awardedFor", message.awardedFor);
 		}
 	}
 }

@@ -50,10 +50,11 @@ public class PlaqueItemBlock extends ItemBlock {
 			{
 				TileEntity tileEntity = world.getTileEntity(pos);
 				NBTTagCompound stackTag = stack.getTagCompound();
-				if (stackTag != null && stackTag.hasKey("awardedTo") && tileEntity instanceof TileEntityPlaque)
+				if (stackTag != null && (stackTag.hasKey("awardedTo") || stackTag.hasKey("awardedFor")) && tileEntity instanceof TileEntityPlaque)
 				{
 					TileEntityPlaque plaqueTE = (TileEntityPlaque)tileEntity;
 					plaqueTE.setAwardedTo(stackTag.getString("awardedTo"));
+					plaqueTE.setAwardedFor(stackTag.getString("awardedFor"));
 					
 					world.notifyBlockUpdate(pos, newState, newState, 4);
 				}

@@ -166,10 +166,19 @@ public class BlockPlaque extends Block implements IHasModel
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag)
 	{	
 		String awardedTo = null;
+		String awardedFor = null;
 		NBTTagCompound tag = stack.getTagCompound();
-		if (tag != null && tag.hasKey("awardedTo"))
+		if (tag != null)
 		{
-			awardedTo = tag.getString("awardedTo");
+			if (tag.hasKey("awardedTo"))
+			{
+				awardedTo = tag.getString("awardedTo");
+			}
+			
+			if (tag.hasKey("awardedFor"))
+			{
+				awardedFor = tag.getString("awardedFor");
+			}
 		}
 		
 		if(this.getUnlocalizedName().contains("plaque_test"))
@@ -179,6 +188,10 @@ public class BlockPlaque extends Block implements IHasModel
 			{
 				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded To: " + TextFormatting.YELLOW + awardedTo);
 			}
+			if (awardedFor != null)
+			{
+				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded For: " + TextFormatting.YELLOW + awardedFor);
+			}
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Testing this plaque.");
 		}
 		else if(this.getUnlocalizedName().contains("plaque_dev"))
@@ -187,6 +200,10 @@ public class BlockPlaque extends Block implements IHasModel
 			if (awardedTo != null)
 			{
 				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded To: " + TextFormatting.YELLOW + awardedTo);
+			}
+			if (awardedFor != null)
+			{
+				tooltip.add(TextFormatting.LIGHT_PURPLE + "Awarded For: " + TextFormatting.YELLOW + awardedFor);
 			}
 			tooltip.add(TextFormatting.LIGHT_PURPLE + "For: " + TextFormatting.GOLD +  "Contributing to the server by developing mods or resource packs.");
 		}
@@ -227,6 +244,7 @@ public class BlockPlaque extends Block implements IHasModel
 			TileEntityPlaque plaqueTileEntity = (TileEntityPlaque)te;
 			NBTTagCompound compound = new NBTTagCompound();
 			compound.setString("awardedTo", plaqueTileEntity.getAwardedTo());
+			compound.setString("awardedFor", plaqueTileEntity.getAwardedFor());
 			plaqueStack.setTagCompound(compound);
 		}
 		

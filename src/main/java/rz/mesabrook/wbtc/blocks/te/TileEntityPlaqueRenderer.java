@@ -12,21 +12,24 @@ public class TileEntityPlaqueRenderer extends TileEntitySpecialRenderer<TileEnti
 		
 		if (te.getAwardedTo() != null)
 		{
+			GlStateManager.pushMatrix();
+			
 			GlStateManager.translate(x, y, z);
-			GlStateManager.translate(0.5, 0.5, 0.5);			
-			GlStateManager.translate(0.5, -0.125, 0.40625);
+			GlStateManager.translate(0.5, 0.5, 0.5);
+			GlStateManager.translate(0.3125, -0.125, 0.40625);
 			GlStateManager.scale(-1, -1, 1);
-			GlStateManager.scale(1/128.0, 1/128.0, 1/128.0);
 			FontRenderer fontRenderer = getFontRenderer();
 			int stringWidth = fontRenderer.getStringWidth(te.getAwardedTo());
-			GlStateManager.translate((stringWidth / 2), 0, 0);
-			double stringWidthByBlock = stringWidth * (1/128.0);
-			if (stringWidthByBlock > 0.625)
+			if (stringWidth > 78)
 			{
-				double amountTooWide = stringWidthByBlock - 0.625;
-				GlStateManager.scale(amountTooWide, 1, 1);
+				GlStateManager.scale(1 / (stringWidth * (1 / 78.0)), 1, 1);
+				stringWidth = 78;
 			}
-			getFontRenderer().drawString(te.getAwardedTo(), 0, 0, 0xFFFFFF);
+			GlStateManager.scale(1/128.0, 1/128.0, 1/128.0);
+			GlStateManager.translate(-(stringWidth - 78) / 2, 0, 0);
+			fontRenderer.drawString(te.getAwardedTo(), 0, 0, 0xFFFFFF);
+			
+			GlStateManager.popMatrix();
 		}
 	}
 }

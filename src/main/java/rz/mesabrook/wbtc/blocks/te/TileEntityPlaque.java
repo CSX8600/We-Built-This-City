@@ -6,8 +6,8 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityPlaque extends TileEntity {
-	private String plaqueId;
-	private String awardedTo;
+	private String plaqueId = "";
+	private String awardedTo = "";
 	
 	public TileEntityPlaque()
 	{
